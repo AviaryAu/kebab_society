@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+@import 'maplibre-gl/dist/maplibre-gl.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../js';
+
+/*
+ * KEBAB SOCIETY DESIGN SYSTEM
+ *
+ * Editorial food publication meets institutional signage meets a kebab shop
+ * that has been there since 1988. Strong type, flat colour, hard edges.
+ */
+
+@theme {
+    --font-display: 'Bitter', Georgia, serif;
+    --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+
+    --color-cream: #f5efe1;
+    --color-cream-deep: #ebe1cb;
+    --color-garlic: #fbf7ee;
+    --color-ink: #16130f;
+    --color-char: #14352a;
+    --color-char-soft: #1d4a3a;
+    --color-tomato: #c1121f;
+    --color-tomato-deep: #8e0f18;
+    --color-lettuce: #2f6b3a;
+    --color-meat: #b5793f;
+    --color-gold: #d8a426;
+}
+
+@layer base {
+    html {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        background-color: var(--color-cream);
+        color: var(--color-ink);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: var(--font-display);
+        font-weight: 900;
+        letter-spacing: -0.015em;
+    }
+
+    ::selection {
+        background-color: var(--color-tomato);
+        color: var(--color-garlic);
+    }
+}
+
+@utility label-caps {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.6875rem;
+    line-height: 1;
+}
+
+/* Hard institutional borders. This is signwriting, not glassmorphism. */
+@utility rule {
+    border: 2px solid var(--color-ink);
+}
+
+@utility rule-thick {
+    border: 3px solid var(--color-ink);
+}
+
+@utility stamped {
+    box-shadow: 4px 4px 0 var(--color-ink);
+}
+
+@utility stamped-sm {
+    box-shadow: 3px 3px 0 var(--color-ink);
+}
+
+/* Subtle paper texture so large cream areas do not read as flat SaaS white. */
+@utility paper {
+    background-color: var(--color-cream);
+    background-image: radial-gradient(circle at 1px 1px, rgba(22, 19, 15, 0.055) 1px, transparent 0);
+    background-size: 14px 14px;
+}
+
+@layer components {
+    .ks-link-underline {
+        background-image: linear-gradient(var(--color-tomato), var(--color-tomato));
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size: 0% 2px;
+        transition: background-size 220ms ease;
+    }
+
+    .ks-link-underline:hover {
+        background-size: 100% 2px;
+    }
+
+    /* MapLibre chrome, restyled to match the Society's signage. */
+    .maplibregl-ctrl-group {
+        border: 2px solid var(--color-ink) !important;
+        border-radius: 0 !important;
+        box-shadow: 3px 3px 0 var(--color-ink) !important;
+        background: var(--color-garlic) !important;
+    }
+
+    .maplibregl-ctrl-group button + button {
+        border-top: 2px solid var(--color-ink) !important;
+    }
+
+    .maplibregl-ctrl-attrib {
+        font-size: 10px;
+        background: rgba(251, 247, 238, 0.9) !important;
+    }
+
+    .maplibregl-ctrl-attrib a {
+        color: var(--color-char);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
