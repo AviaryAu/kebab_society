@@ -26,7 +26,7 @@ class RestaurantController extends Controller
             throw new NotFoundHttpException;
         }
 
-        $restaurant->load(['suburb', 'kebabStyles']);
+        $restaurant->load(['suburb', 'kebabStyles', 'photos']);
 
         $nearby = $this->discovery
             ->nearest(

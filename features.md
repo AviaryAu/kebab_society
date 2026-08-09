@@ -8,7 +8,11 @@ Current phase:
 
 Current priority:
 
-**Build the Sydney Kebab Map**
+**Google Places ingestion, so the register holds real restaurants**
+
+The map, scoring, leaderboards, search and filters are built and running against
+fictional sample data. Replacing that sample data with genuine, deduplicated
+Google Places records is the next material step.
 
 ---
 
@@ -16,7 +20,7 @@ Current priority:
 
 ## F001 — Application Shell
 
-Status: `TODO`
+Status: `DONE`
 
 Create the base Kebab Society application shell.
 
@@ -32,11 +36,14 @@ Requirements:
 * basic footer
 * consistent design system
 
+Delivered as `SocietyLayout`, `AppHeader`, `AppFooter` plus the design tokens and
+utilities in `resources/css/app.css`.
+
 ---
 
 ## F002 — Kebab Database
 
-Status: `TODO`
+Status: `DONE`
 
 Create restaurant database.
 
@@ -62,6 +69,10 @@ Minimum restaurant fields:
 * updated_at
 
 Design the schema so additional kebab-specific information can be added without major refactoring.
+
+Tables: `restaurants`, `suburbs`, `kebab_styles`, `kebab_style_restaurant`.
+Trading hours are stored as JSON and read through the `OpeningHours` value
+object. Restaurants are soft-deleted; records are never silently removed.
 
 ---
 
@@ -132,7 +143,7 @@ Do not silently merge uncertain records.
 
 ## F005 — Kebab Map
 
-Status: `TODO`
+Status: `DONE`
 
 Create the primary map experience.
 
@@ -148,11 +159,14 @@ Requirements:
 * restaurant preview
 * map/list relationship
 
+Built with MapLibre GL JS on free CARTO/OpenStreetMap raster tiles. No API key,
+no per-load billing. See claude.md section 2 for why.
+
 ---
 
 ## F006 — Kebab Marker System
 
-Status: `TODO`
+Status: `DONE`
 
 Create custom visual markers based on Kebab Society score.
 
@@ -182,11 +196,14 @@ Markers should be custom assets.
 
 Do not use emoji as the final production implementation.
 
+Sliced from the supplied artwork by `scripts/build_brand_assets.py` and drawn by
+a MapLibre symbol layer. Clusters are DOM markers so no glyph server is needed.
+
 ---
 
 ## F007 — Restaurant Preview
 
-Status: `TODO`
+Status: `DONE`
 
 Clicking a map marker displays:
 
@@ -203,7 +220,7 @@ Clicking a map marker displays:
 
 ## F008 — Restaurant Page
 
-Status: `TODO`
+Status: `DONE`
 
 Create:
 
@@ -230,7 +247,7 @@ Display:
 
 ## F009 — Kebab Meter
 
-Status: `TODO`
+Status: `DONE`
 
 Create visual score component.
 
@@ -262,11 +279,14 @@ States:
 
 Copy should remain editable through configuration rather than hard-coded throughout the application.
 
+Tier bands, labels, verdicts, colours and marker artwork all live in
+`config/kebab.php`.
+
 ---
 
 ## F010 — Kebab Society Score
 
-Status: `TODO`
+Status: `DONE`
 
 Implement initial scoring model.
 
@@ -281,11 +301,16 @@ The scoring engine must be isolated in a service.
 
 Do not put scoring logic in Vue.
 
+`KebabScoringService` blends the Society rating, the Google rating and the
+weight of opinion behind them, with Bayesian shrinkage toward a neutral prior
+and a bounded, disclosed editorial adjustment. Every score ships with the
+breakdown that produced it, and the restaurant page shows it.
+
 ---
 
 ## F011 — Leaderboard
 
-Status: `TODO`
+Status: `DONE`
 
 Create:
 
@@ -307,11 +332,14 @@ Initial categories:
 
 Future categories should be easy to add.
 
+`KebabRankingService` holds the board definitions; adding a board is one entry,
+not one page. Society Certified is included as a fourth board.
+
 ---
 
 ## F012 — Search
 
-Status: `TODO`
+Status: `DONE`
 
 Search restaurants by:
 
@@ -330,7 +358,7 @@ Future:
 
 ## F013 — Filters
 
-Status: `TODO`
+Status: `DONE`
 
 Map filters:
 
@@ -343,6 +371,9 @@ Map filters:
 * Mixed
 * Late Night
 * Society Certified
+
+Filters are resolved server-side and encoded in the URL, so any view of the map
+can be shared.
 
 ---
 
@@ -548,7 +579,7 @@ Display:
 
 ## F024 — Kebab Emergency
 
-Status: `TODO`
+Status: `DONE`
 
 Primary action:
 
@@ -561,6 +592,10 @@ Prioritise:
 1. Open now
 2. Distance
 3. Society score
+
+Shipped early because it is the clearest expression of the product. Served by
+`GET /api/kebab-emergency`; falls back to the nearest closed shops rather than
+leaving a hungry person with nothing.
 
 ---
 
@@ -805,23 +840,23 @@ Fun future metric.
 
 Build in this order:
 
-1. Application shell
-2. Design system
-3. Restaurant database
+1. ~~Application shell~~
+2. ~~Design system~~
+3. ~~Restaurant database~~
 4. Google Places integration
 5. Geographic discovery
 6. Deduplication
-7. Map
-8. Custom markers
-9. Restaurant preview
-10. Restaurant page
-11. Kebab Meter
-12. Kebab Society Score
-13. Leaderboard
-14. Search
-15. Filters
+7. ~~Map~~
+8. ~~Custom markers~~
+9. ~~Restaurant preview~~
+10. ~~Restaurant page~~
+11. ~~Kebab Meter~~
+12. ~~Kebab Society Score~~
+13. ~~Leaderboard~~
+14. ~~Search~~
+15. ~~Filters~~
 16. SEO
-17. Testing
+17. ~~Testing~~ (business logic covered; extend as features land)
 18. Production polish
 
 Do not jump ahead to user accounts or gamification until the core discovery experience works.

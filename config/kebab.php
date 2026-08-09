@@ -9,47 +9,42 @@ return [
     | Kebab Meter tiers
     |---------------------------------------------------------------------------
     |
-    | The Kebab Meter is the primary visual representation of the Kebab Society
-    | Score. Copy lives here rather than in Blade/Vue so the Society can revise
-    | its verdicts without a code change. Tiers must be ordered ascending and
-    | cover 0-100 without gaps.
+    | The Society publishes a five star rating, on the same scale people already
+    | read on Google. Tiers must be ordered ascending and cover 0.0 - 5.0
+    | without gaps. Copy lives here rather than in Vue so the Society can revise
+    | its verdicts without a code change.
     |
-    | "marker" refers to a sprite in public/images/markers.
+    | "marker" refers to a sprite in public/images/markers, whose illustrated
+    | star badge matches the band.
     |
     */
 
     'tiers' => [
         [
-            'key' => 'criminal',
-            'min' => 0,
-            'max' => 39,
-            'label' => 'CRIMINAL',
-            'verdict' => 'The Society cannot condone this.',
-            'marker' => 'questionable',
-            'colour' => '#7A1D1D',
-        ],
-        [
             'key' => 'questionable',
-            'min' => 40,
-            'max' => 59,
+            'min' => 0.0,
+            'max' => 2.99,
+            'stars' => 1,
             'label' => 'QUESTIONABLE',
             'verdict' => 'The Society has concerns.',
             'marker' => 'questionable',
             'colour' => '#B3202B',
         ],
         [
-            'key' => 'decent',
-            'min' => 60,
-            'max' => 69,
-            'label' => 'DECENT',
-            'verdict' => 'Structurally acceptable. Emotionally unremarkable.',
+            'key' => 'average',
+            'min' => 3.0,
+            'max' => 3.49,
+            'stars' => 2,
+            'label' => 'ACCEPTABLE',
+            'verdict' => 'Structurally sound. Emotionally unremarkable.',
             'marker' => 'average',
             'colour' => '#C2762B',
         ],
         [
             'key' => 'good',
-            'min' => 70,
-            'max' => 79,
+            'min' => 3.5,
+            'max' => 3.99,
+            'stars' => 3,
             'label' => 'GOOD',
             'verdict' => 'A reliable kebab. No notes of alarm.',
             'marker' => 'good',
@@ -57,8 +52,9 @@ return [
         ],
         [
             'key' => 'excellent',
-            'min' => 80,
-            'max' => 89,
+            'min' => 4.0,
+            'max' => 4.49,
+            'stars' => 4,
             'label' => 'EXCELLENT',
             'verdict' => 'Worth crossing a suburb for.',
             'marker' => 'excellent',
@@ -66,8 +62,9 @@ return [
         ],
         [
             'key' => 'legendary',
-            'min' => 90,
-            'max' => 100,
+            'min' => 4.5,
+            'max' => 5.0,
+            'stars' => 5,
             'label' => 'LEGENDARY',
             'verdict' => 'The Society has spoken. Go immediately.',
             'marker' => 'legendary',
@@ -77,43 +74,83 @@ return [
 
     /*
     |---------------------------------------------------------------------------
-    | Scoring model
+    | Unrated
     |---------------------------------------------------------------------------
     |
-    | The MVP Kebab Society Score is derived from the signals we actually hold
-    | today: the Google rating (as a secondary signal only), the volume of
-    | opinion behind it, Society reviews once they exist, and an editorial
-    | adjustment applied by the Society. Weights must sum to 1.0.
-    |
-    | The score is deliberately explainable: KebabScoringService returns a
-    | breakdown so a restaurant page can justify every point.
+    | A restaurant on the register that the Society cannot yet rate. It is shown
+    | honestly rather than given a flattering default.
     |
     */
 
-    'scoring' => [
+    'unrated_tier' => [
+        'key' => 'unrated',
+        'min' => 0.0,
+        'max' => 0.0,
+        'stars' => 0,
+        'label' => 'UNRATED',
+        'verdict' => 'On the register. Awaiting a verdict.',
+        'marker' => 'unrated',
+        'colour' => '#7A756C',
+    ],
+
+    /*
+    |---------------------------------------------------------------------------
+    | Rating model
+    |---------------------------------------------------------------------------
+    |
+    | The Kebab Society Rating is published out of five. Today it is derived
+    | from the Google rating, pulled toward a neutral prior in proportion to how
+    | few reviews stand behind it, plus a small, bounded, disclosed editorial
+    | adjustment. Society member reviews take the majority of the weight as soon
+    | as they exist.
+    |
+    | Weights are normalised across whichever signals are actually held.
+    |
+    */
+
+    'rating' => [
 
         'weights' => [
-            'society_rating' => 0.55,
-            'google_rating' => 0.30,
-            'confidence' => 0.15,
+            'society_rating' => 0.60,
+            'google_rating' => 0.40,
         ],
 
         // Reviews needed before a rating is treated as fully trustworthy.
         'confidence_review_target' => 150,
 
-        // Star ratings do not use the bottom of their scale in the wild: almost
-        // every trading kebab shop sits between 3.0 and 5.0. Anchoring the
-        // Kebab Meter at this rating stops everything bunching up at 90+.
-        'rating_floor' => 2.5,
-
         // Ratings are pulled toward this neutral mean until enough reviews
-        // exist (Bayesian shrinkage), so a lone 5-star review cannot mint a
+        // exist (Bayesian shrinkage), so a lone five star review cannot mint a
         // legendary kebab.
         'prior_rating' => 3.6,
         'prior_weight' => 20,
 
-        // Editorial adjustment bounds, in final score points.
-        'editorial_adjustment_limit' => 8,
+        // Editorial adjustment bounds, in stars.
+        'editorial_adjustment_limit' => 0.3,
+    ],
+
+    /*
+    |---------------------------------------------------------------------------
+    | Photographs
+    |---------------------------------------------------------------------------
+    |
+    | Uploads are stored on Laravel Cloud's object storage in production (the
+    | "s3" disk, configured entirely through environment variables) and on the
+    | public disk locally. Each upload is resized into the formats below; the
+    | original upload is never served to visitors.
+    |
+    */
+
+    'photos' => [
+        'disk' => env('KEBAB_PHOTO_DISK', env('FILESYSTEM_DISK', 'public')),
+        'directory' => 'restaurant-photos',
+        'max_upload_kilobytes' => 12288, // 12MB
+        'quality' => 82,
+
+        'formats' => [
+            'thumb' => ['width' => 400, 'height' => 300],
+            'card' => ['width' => 900, 'height' => 600],
+            'hero' => ['width' => 1800, 'height' => 1200],
+        ],
     ],
 
     /*

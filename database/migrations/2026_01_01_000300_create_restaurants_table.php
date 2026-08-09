@@ -39,9 +39,9 @@ return new class extends Migration
             $table->string('status')->default('published');
 
             // Society verdict
-            $table->unsignedTinyInteger('kebab_score')->nullable();
-            $table->json('score_breakdown')->nullable();
-            $table->smallInteger('editorial_adjustment')->default(0);
+            $table->decimal('kebab_rating', 2, 1)->nullable();
+            $table->json('rating_breakdown')->nullable();
+            $table->decimal('editorial_adjustment', 2, 1)->default(0);
             $table->text('editorial_note')->nullable();
             $table->decimal('society_rating', 2, 1)->nullable();
             $table->unsignedInteger('society_review_count')->default(0);
@@ -51,12 +51,13 @@ return new class extends Migration
 
             // Provenance
             $table->string('data_source')->default('seed_data');
+            $table->string('location_precision')->default('address');
 
             $table->timestamps();
             $table->softDeletes();
 
             $table->index(['latitude', 'longitude']);
-            $table->index(['status', 'kebab_score']);
+            $table->index(['status', 'kebab_rating']);
             $table->index('suburb_id');
             $table->index('society_approved_at');
         });

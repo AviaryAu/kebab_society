@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import pathlib
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "images"
@@ -28,7 +28,18 @@ MARKER_SLICES = [
     ("average", 940, 1237),
     ("questionable", 1240, 1520),
 ]
-MARKER_HEIGHT = 128  # rendered at pixelRatio 2 -> 64 CSS px tall
+
+# Markers are drawn at pixelRatio 2, so this is 128 CSS pixels of intrinsic
+# height. MapLibre applies icon-size on top. Rendering at 256 keeps the artwork
+# crisp at the size the map actually draws it.
+MARKER_HEIGHT = 256
+
+# The tier an unrated restaurant borrows its silhouette from, desaturated so an
+# unrated shop is never mistaken for a rated one.
+UNRATED_SOURCE = "good"
+
+# Approval stamp, drawn as a badge beside a marker on the map.
+STAMP_MAP_HEIGHT = 320
 
 # Logo sheet: (name, left, top, right, bottom, output height)
 LOGO_SLICES = [
@@ -60,9 +71,26 @@ def save(image: Image.Image, path: pathlib.Path) -> None:
 
 def build_markers() -> None:
     sheet = Image.open(SOURCE / "map_markers.png").convert("RGBA")
+
     for name, left, right in MARKER_SLICES:
         sprite = scale_to_height(trim(sheet.crop((left, 0, right, sheet.height))), MARKER_HEIGHT)
         save(sprite, OUT / "markers" / f"marker-{name}.png")
+
+    build_unrated_marker()
+
+
+def build_unrated_marker() -> None:
+    """A grey, faded marker for restaurants the Society has not yet rated."""
+    source = Image.open(OUT / "markers" / f"marker-{UNRATED_SOURCE}.png").convert("RGBA")
+
+    alpha = source.getchannel("A").point(lambda value: int(value * 0.9))
+    grey = ImageOps.grayscale(source.convert("RGB"))
+    faded = Image.blend(grey.convert("RGB"), Image.new("RGB", source.size, (245, 239, 225)), 0.3)
+
+    unrated = faded.convert("RGBA")
+    unrated.putalpha(alpha)
+
+    save(unrated, OUT / "markers" / "marker-unrated.png")
 
 
 def build_logos() -> None:
@@ -84,7 +112,7 @@ def build_logos() -> None:
 def build_stamp() -> None:
     stamp = trim(Image.open(SOURCE / "kebab_approved_stamp.png").convert("RGBA"))
     save(scale_to_height(stamp, 480), OUT / "brand" / "society-approved-stamp.png")
-    save(scale_to_height(stamp, 160), OUT / "brand" / "society-approved-stamp-sm.png")
+    save(scale_to_height(stamp, STAMP_MAP_HEIGHT), OUT / "brand" / "society-approved-stamp-sm.png")
 
 
 if __name__ == "__main__":

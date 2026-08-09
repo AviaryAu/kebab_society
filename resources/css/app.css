@@ -122,6 +122,213 @@
     }
 }
 
+/*
+ * ANIMATED ICON SET
+ *
+ * Icons animate on hover, in the spirit of animate-ui's icon set but built as
+ * plain SVG + CSS so the Vue app carries no extra dependency.
+ *
+ * Usage: put `ks-anim` on the interactive element (button, link, card) and give
+ * the moving part of the SVG one of the `ks-i-*` classes below.
+ */
+.ks-icon {
+    display: block;
+    overflow: visible;
+}
+
+.ks-icon [class*='ks-i-'] {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.ks-anim:hover .ks-i-spin,
+.ks-anim:focus-visible .ks-i-spin {
+    animation: ks-spin 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ks-anim:hover .ks-i-jump,
+.ks-anim:focus-visible .ks-i-jump {
+    animation: ks-jump 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ks-anim:hover .ks-i-nudge,
+.ks-anim:focus-visible .ks-i-nudge {
+    animation: ks-nudge 600ms ease-in-out;
+}
+
+.ks-anim:hover .ks-i-wobble,
+.ks-anim:focus-visible .ks-i-wobble {
+    animation: ks-wobble 700ms ease-in-out;
+}
+
+.ks-anim:hover .ks-i-flicker,
+.ks-anim:focus-visible .ks-i-flicker {
+    animation: ks-flicker 900ms ease-in-out infinite;
+}
+
+.ks-anim:hover .ks-i-pop,
+.ks-anim:focus-visible .ks-i-pop {
+    animation: ks-pop 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ks-anim:hover .ks-i-tick,
+.ks-anim:focus-visible .ks-i-tick {
+    animation: ks-tick 1600ms steps(8) infinite;
+    transform-origin: center bottom;
+}
+
+.ks-anim:hover .ks-i-draw,
+.ks-anim:focus-visible .ks-i-draw {
+    animation: ks-draw 900ms ease-in-out;
+}
+
+.ks-anim:hover .ks-i-rise,
+.ks-anim:focus-visible .ks-i-rise {
+    animation: ks-rise 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ks-anim:hover .ks-i-sweep,
+.ks-anim:focus-visible .ks-i-sweep {
+    animation: ks-sweep 800ms ease-in-out;
+}
+
+@keyframes ks-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ks-jump {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-22%);
+    }
+    70% {
+        transform: translateY(4%);
+    }
+}
+
+@keyframes ks-nudge {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(22%);
+    }
+}
+
+@keyframes ks-wobble {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-12deg);
+    }
+    55% {
+        transform: rotate(10deg);
+    }
+    80% {
+        transform: rotate(-4deg);
+    }
+}
+
+@keyframes ks-flicker {
+    0%,
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    35% {
+        transform: scale(1.12) translateY(-6%);
+        opacity: 0.85;
+    }
+    65% {
+        transform: scale(0.94) translateY(2%);
+        opacity: 1;
+    }
+}
+
+@keyframes ks-pop {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1.28) rotate(8deg);
+    }
+}
+
+@keyframes ks-tick {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ks-draw {
+    0% {
+        stroke-dashoffset: var(--ks-dash, 48);
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes ks-rise {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-16%) scale(1.08);
+    }
+}
+
+@keyframes ks-sweep {
+    0% {
+        transform: translateX(-14%);
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(14%);
+        opacity: 0.2;
+    }
+}
+
+/* The Society's stamp lands rather than fades. */
+@keyframes ks-stamp-in {
+    0% {
+        transform: rotate(-18deg) scale(1.9);
+        opacity: 0;
+    }
+    60% {
+        transform: rotate(-9deg) scale(0.96);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-9deg) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes ks-marker-in {
+    0% {
+        transform: translateY(-40%) scale(0.6);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

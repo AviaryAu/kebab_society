@@ -22,7 +22,7 @@ class RestaurantPreviewResource extends JsonResource
     public function toArray(Request $request): array
     {
         $now = CarbonImmutable::now();
-        $tier = $this->scoreTier();
+        $tier = $this->ratingTier();
         $isOpen = $this->isOpenAt($now);
         $closingTime = $isOpen ? $this->closingTime($now) : null;
         $nextOpening = $isOpen ? null : $this->nextOpeningTime($now);
@@ -40,10 +40,12 @@ class RestaurantPreviewResource extends JsonResource
             'postcode' => $this->postcode,
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,
+            'phone' => $this->phone,
 
-            'kebab_score' => $this->kebab_score,
+            'kebab_rating' => $this->kebab_rating,
+            'is_rated' => $this->isRated(),
             'tier' => $tier->toArray(),
-            'marker_icon' => asset("images/markers/marker-{$tier->marker}.png"),
+            'marker_icon' => $tier->markerUrl(),
 
             'google_rating' => $this->google_rating,
             'google_review_count' => $this->google_review_count,
@@ -57,10 +59,12 @@ class RestaurantPreviewResource extends JsonResource
             'closes_at' => $closingTime?->format('g:ia'),
             'opens_at' => $nextOpening?->calendar(),
             'trades_late_night' => $this->tradesLateNight(),
+            'has_hours' => ! $this->hours()->isEmpty(),
 
             'price_level' => $this->price_level,
             'society_approved' => $this->isSocietyApproved(),
             'styles' => KebabStyleResource::collection($this->whenLoaded('kebabStyles')),
+            'photos' => RestaurantPhotoResource::collection($this->whenLoaded('photos')),
 
             'url' => route('restaurants.show', $this->slug),
             'directions_url' => $this->directionsUrl(),

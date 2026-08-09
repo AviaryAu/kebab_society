@@ -20,12 +20,14 @@ final readonly class RestaurantFilters
         public bool $openNow = false,
         public bool $lateNight = false,
         public bool $societyCertified = false,
-        public int $minimumScore = 0,
+        public float $minimumRating = 0.0,
         public ?string $suburb = null,
     ) {}
 
     public static function fromRequest(Request $request): self
     {
+        self::normaliseBooleans($request);
+
         $validated = $request->validate([
             'search' => ['nullable', 'string', 'max:120'],
             'styles' => ['nullable', 'array', 'max:20'],
@@ -33,7 +35,7 @@ final readonly class RestaurantFilters
             'open_now' => ['nullable', 'boolean'],
             'late_night' => ['nullable', 'boolean'],
             'society_certified' => ['nullable', 'boolean'],
-            'min_score' => ['nullable', 'integer', 'between:0,100'],
+            'min_rating' => ['nullable', 'numeric', 'between:0,5'],
             'suburb' => ['nullable', 'string', 'max:120'],
         ]);
 
@@ -43,9 +45,27 @@ final readonly class RestaurantFilters
             openNow: (bool) ($validated['open_now'] ?? false),
             lateNight: (bool) ($validated['late_night'] ?? false),
             societyCertified: (bool) ($validated['society_certified'] ?? false),
-            minimumScore: (int) ($validated['min_score'] ?? 0),
+            minimumRating: (float) ($validated['min_rating'] ?? 0),
             suburb: $validated['suburb'] ?? null,
         );
+    }
+
+    /**
+     * Query strings carry booleans as text ("true", "on", "1"). Normalise them
+     * so a shared or hand-typed link never fails validation and bounces the
+     * visitor back to an unfiltered map.
+     */
+    private static function normaliseBooleans(Request $request): void
+    {
+        foreach (['open_now', 'late_night', 'society_certified'] as $key) {
+            if (! $request->has($key)) {
+                continue;
+            }
+
+            $request->merge([
+                $key => filter_var($request->input($key), FILTER_VALIDATE_BOOL, FILTER_NULL_ON_FAILURE) ?? false,
+            ]);
+        }
     }
 
     /**
@@ -59,7 +79,7 @@ final readonly class RestaurantFilters
             'open_now' => $this->openNow,
             'late_night' => $this->lateNight,
             'society_certified' => $this->societyCertified,
-            'min_score' => $this->minimumScore,
+            'min_rating' => $this->minimumRating,
             'suburb' => $this->suburb,
         ];
     }

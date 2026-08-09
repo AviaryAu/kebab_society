@@ -33,7 +33,6 @@ class RestaurantDetailResource extends RestaurantPreviewResource
     {
         return parent::toArray($request) + [
             'description' => $this->description,
-            'phone' => $this->phone,
             'website' => $this->website,
             'editorial_note' => $this->editorial_note,
             'verification_status' => $this->verification_status->value,
@@ -42,7 +41,7 @@ class RestaurantDetailResource extends RestaurantPreviewResource
             'data_source' => $this->data_source->value,
             'data_source_label' => $this->data_source->label(),
             'google_data_updated_at' => $this->google_data_updated_at?->diffForHumans(),
-            'score_breakdown' => $this->score_breakdown,
+            'rating_breakdown' => $this->rating_breakdown,
             'weekly_hours' => $this->weeklyHours(),
         ];
     }

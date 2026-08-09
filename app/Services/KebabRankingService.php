@@ -63,12 +63,12 @@ class KebabRankingService
     public function entries(LeaderboardDefinition $definition, int $limit = self::DEFAULT_LIMIT): Collection
     {
         $query = Restaurant::query()
-            ->with(['suburb', 'kebabStyles'])
+            ->with(['suburb', 'kebabStyles', 'photos'])
             ->discoverable()
-            ->whereNotNull('kebab_score')
-            ->minimumScore($definition->minimumScore)
-            ->orderByDesc('kebab_score')
-            ->orderByDesc('society_review_count')
+            ->whereNotNull('kebab_rating')
+            ->minimumRating($definition->minimumRating)
+            ->orderByDesc('kebab_rating')
+            ->orderByDesc('google_review_count')
             ->orderBy('name');
 
         if ($definition->styleSlug !== null) {

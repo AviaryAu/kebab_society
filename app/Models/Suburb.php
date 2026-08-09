@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Database\Factories\SuburbFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Suburb extends Model
 {
-    /** @use HasFactory<\Database\Factories\SuburbFactory> */
+    /** @use HasFactory<SuburbFactory> */
     use HasFactory;
 
     protected $fillable = [

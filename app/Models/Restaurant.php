@@ -9,19 +9,21 @@ use App\Enums\DataSource;
 use App\Enums\RestaurantStatus;
 use App\Enums\VerificationStatus;
 use App\Support\OpeningHours;
-use App\Support\ScoreTier;
+use App\Support\RatingTier;
 use Carbon\CarbonImmutable;
 use Carbon\CarbonInterface;
+use Database\Factories\RestaurantFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Restaurant extends Model
 {
-    /** @use HasFactory<\Database\Factories\RestaurantFactory> */
+    /** @use HasFactory<RestaurantFactory> */
     use HasFactory;
 
     use SoftDeletes;
@@ -47,8 +49,8 @@ class Restaurant extends Model
         'opening_hours',
         'price_level',
         'status',
-        'kebab_score',
-        'score_breakdown',
+        'kebab_rating',
+        'rating_breakdown',
         'editorial_adjustment',
         'editorial_note',
         'society_rating',
@@ -57,6 +59,12 @@ class Restaurant extends Model
         'verification_status',
         'society_approved_at',
         'data_source',
+        'location_precision',
+        'research_category',
+        'research_status',
+        'research_source',
+        'research_last_verified',
+        'research_verification_notes',
     ];
 
     protected function casts(): array
@@ -70,15 +78,16 @@ class Restaurant extends Model
             'opening_hours' => OpeningHoursCast::class,
             'price_level' => 'integer',
             'status' => RestaurantStatus::class,
-            'kebab_score' => 'integer',
-            'score_breakdown' => 'array',
-            'editorial_adjustment' => 'integer',
+            'kebab_rating' => 'float',
+            'rating_breakdown' => 'array',
+            'editorial_adjustment' => 'float',
             'society_rating' => 'float',
             'society_review_count' => 'integer',
             'check_in_count' => 'integer',
             'verification_status' => VerificationStatus::class,
             'society_approved_at' => 'immutable_datetime',
             'data_source' => DataSource::class,
+            'research_last_verified' => 'immutable_date',
         ];
     }
 
@@ -103,6 +112,17 @@ class Restaurant extends Model
         return $this->belongsToMany(KebabStyle::class)
             ->withPivot('is_signature')
             ->orderBy('sort_order');
+    }
+
+    /**
+     * @return HasMany<RestaurantPhoto, $this>
+     */
+    public function photos(): HasMany
+    {
+        return $this->hasMany(RestaurantPhoto::class)
+            ->orderByDesc('is_primary')
+            ->orderBy('sort_order')
+            ->orderBy('id');
     }
 
     /*
@@ -143,9 +163,14 @@ class Restaurant extends Model
         return $this->hours()->tradesLateNight();
     }
 
-    public function scoreTier(): ScoreTier
+    public function ratingTier(): RatingTier
     {
-        return ScoreTier::forScore($this->kebab_score);
+        return RatingTier::forRating($this->kebab_rating);
+    }
+
+    public function isRated(): bool
+    {
+        return $this->kebab_rating !== null;
     }
 
     public function isSocietyApproved(): bool
@@ -195,9 +220,13 @@ class Restaurant extends Model
     /**
      * @param  Builder<Restaurant>  $query
      */
-    public function scopeMinimumScore(Builder $query, int $score): void
+    public function scopeMinimumRating(Builder $query, float $rating): void
     {
-        $query->where('kebab_score', '>=', $score);
+        if ($rating <= 0) {
+            return;
+        }
+
+        $query->where('kebab_rating', '>=', $rating);
     }
 
     /**

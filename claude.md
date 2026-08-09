@@ -71,7 +71,7 @@ Frontend:
 * Vue Composition API
 * Pinia where shared state is required
 * Tailwind CSS unless the existing project already uses another established styling system
-* Google Maps JavaScript API
+* MapLibre GL JS
 
 Do not introduce another frontend framework.
 
@@ -80,6 +80,39 @@ Do not rewrite the application into React.
 Do not replace Laravel with Node.
 
 Use the existing project structure whenever possible.
+
+### Mapping
+
+The map uses **MapLibre GL JS** with free, key-less raster basemap tiles from
+CARTO (OpenStreetMap data).
+
+Reasons:
+
+* no API key in the client
+* no per-load billing
+* no vendor lock-in
+* full control over marker artwork
+
+Attribution for OpenStreetMap and CARTO is mandatory and must not be removed.
+
+Tile URLs and map defaults live in `config/kebab.php` under `map`, so the
+provider can be swapped without touching Vue.
+
+Google Maps is still used for one thing only: outbound *directions* links.
+That requires no API key.
+
+Google Places remains the intended source for restaurant *data* (section 10).
+Do not confuse the two.
+
+### Local environment
+
+* SQLite is used for local development and testing.
+* MySQL remains the intended production database.
+* Nothing may depend on database-specific SQL. Use Eloquent and migrations.
+
+MapLibre must be listed in `optimizeDeps.exclude` in `vite.config.js`. Vite's
+dependency optimiser otherwise drops MapLibre's web worker, which silently
+breaks every GeoJSON layer in development.
 
 ---
 
@@ -249,6 +282,24 @@ At low zoom levels, cluster markers.
 At high zoom levels, show individual kebab markers.
 
 Clicking a marker should open a compact restaurant preview.
+
+### Implementation
+
+The five marker tiers are illustrated PNG assets derived from
+`images/map_markers.png` and written to `public/images/markers/`.
+
+They are drawn by a MapLibre **symbol layer** rather than DOM elements, so
+thousands of markers stay cheap.
+
+Clusters are drawn as **DOM markers**. This is deliberate: MapLibre needs an
+external glyph/font server to render text inside a map layer, and the Society
+does not depend on one.
+
+A Society Certified restaurant carries the approval stamp as a second symbol
+layer offset from its marker.
+
+Marker artwork is selected by the score tier defined in `config/kebab.php`, so
+changing a band changes the map.
 
 ---
 
@@ -759,6 +810,63 @@ Potential custom assets:
 
 Use SVG where appropriate.
 
+### Asset pipeline
+
+The designer supplies composite sheets in `images/`:
+
+* `kebab_society_logos.png` — four logo lockups
+* `map_markers.png` — five score markers
+* `kebab_approved_stamp.png` — the approval stamp
+
+`scripts/build_brand_assets.py` slices, trims and resizes these into
+`public/images/`. Re-run it whenever a source sheet changes:
+
+```
+python3 scripts/build_brand_assets.py
+```
+
+Generated output:
+
+* `public/images/brand/logo-horizontal.png`
+* `public/images/brand/logo-stacked.png`
+* `public/images/brand/logo-seal.png`
+* `public/images/brand/logo-icon.png`
+* `public/images/brand/app-icon.png`
+* `public/images/brand/society-approved-stamp.png`
+* `public/images/brand/society-approved-stamp-sm.png`
+* `public/images/markers/marker-{legendary,excellent,good,average,questionable}.png`
+* `public/favicon.ico`
+
+Do not hand-edit the generated files. Edit the source sheet and re-run.
+
+---
+
+# 23a. Iconography and Motion
+
+The interface uses a bespoke animated SVG icon set in
+`resources/js/Components/Icons/`, in the spirit of animate-ui's icons but
+implemented as plain SVG plus CSS so the app carries no extra dependency.
+
+Rules:
+
+* Icons animate **on hover and keyboard focus**, never on load, never on loop
+  by default.
+* Put `ks-anim` on the interactive element (button, link, card). Give the
+  moving part of the SVG one of the `ks-i-*` classes.
+* Available motions: `ks-i-spin`, `ks-i-jump`, `ks-i-nudge`, `ks-i-wobble`,
+  `ks-i-flicker`, `ks-i-pop`, `ks-i-tick`, `ks-i-draw`, `ks-i-rise`,
+  `ks-i-sweep`.
+* All motion is disabled under `prefers-reduced-motion`.
+
+Motion should be brief, physical and slightly comic. It must never delay an
+interaction or move layout.
+
+Typography:
+
+* Display / headings: **Bitter** (slab serif, editorial and institutional)
+* Interface: **Archivo**
+* Labels use the `label-caps` utility: uppercase, tracked out, small.
+
 ---
 
 # 24. SEO
@@ -1003,6 +1111,27 @@ A feature is complete when:
 * no obvious console errors remain
 * no obvious PHP/Laravel errors remain
 * feature works against realistic data
+
+---
+
+# 34a. Sample Data
+
+Until Google Places ingestion runs, the application ships **fictional** sample
+restaurants (`database/seeders/RestaurantSeeder.php`).
+
+Rules for sample data:
+
+* Suburbs and coordinates are real, so the map behaves realistically.
+* Business names, ratings, verdicts and hours are invented.
+* No real business may be given an invented rating or an invented Society
+  verdict.
+* The interface must disclose that current listings are sample data.
+
+Reset the sample register with:
+
+```
+php artisan migrate:fresh --seed
+```
 
 ---
 

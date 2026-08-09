@@ -19,7 +19,7 @@ final readonly class LeaderboardDefinition
         public ?string $styleSlug = null,
         public bool $lateNightOnly = false,
         public bool $societyApprovedOnly = false,
-        public int $minimumScore = 0,
+        public float $minimumRating = 0.0,
     ) {}
 
     /**

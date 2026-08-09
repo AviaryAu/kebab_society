@@ -23,11 +23,11 @@ class KebabDiscoveryService
     public function search(RestaurantFilters $filters): Collection
     {
         $query = Restaurant::query()
-            ->with(['suburb', 'kebabStyles'])
+            ->with(['suburb', 'kebabStyles', 'photos'])
             ->discoverable()
             ->matching($filters->search)
             ->withAnyStyle($filters->styles)
-            ->minimumScore($filters->minimumScore);
+            ->minimumRating($filters->minimumRating);
 
         if ($filters->societyCertified) {
             $query->societyApproved();
@@ -37,7 +37,7 @@ class KebabDiscoveryService
             $query->whereHas('suburb', fn ($suburb) => $suburb->where('slug', $filters->suburb));
         }
 
-        $restaurants = $query->orderByDesc('kebab_score')->get();
+        $restaurants = $query->orderByDesc('kebab_rating')->orderBy('name')->get();
 
         // Trading hours are stored as JSON, so time-based filters are resolved
         // in PHP through the shared OpeningHours logic.

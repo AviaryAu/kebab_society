@@ -42,6 +42,13 @@ class HandleInertiaRequests extends Middleware
                 'tagline' => "Sydney's unofficial kebab authority.",
                 'is_late_night' => now()->hour < 5 || now()->hour >= 22,
             ],
+            'auth' => [
+                'user' => fn () => $request->user() === null ? null : [
+                    'name' => $request->user()->name,
+                    'email' => $request->user()->email,
+                    'is_admin' => $request->user()->isAdmin(),
+                ],
+            ],
             'flash' => [
                 'message' => fn () => $request->session()->get('message'),
             ],

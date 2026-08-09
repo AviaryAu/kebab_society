@@ -1,0 +1,3721 @@
+{
+  "dataset_version": "2026-08-09-enriched-web-research",
+  "geocoded_with": "OpenStreetMap Nominatim",
+  "suburbs": [
+    {
+      "name": "Annandale",
+      "slug": "annandale",
+      "postcode": "2000",
+      "region": "Inner West",
+      "latitude": -33.8873469,
+      "longitude": 151.1722933
+    },
+    {
+      "name": "Ashfield",
+      "slug": "ashfield",
+      "postcode": "2131",
+      "region": "Inner West",
+      "latitude": -33.8882043,
+      "longitude": 151.1208548
+    },
+    {
+      "name": "Auburn",
+      "slug": "auburn",
+      "postcode": "2144",
+      "region": "Western Sydney",
+      "latitude": -33.8513182,
+      "longitude": 151.0315565
+    },
+    {
+      "name": "Banksia",
+      "slug": "banksia",
+      "postcode": "2000",
+      "region": "St George",
+      "latitude": -33.9443751,
+      "longitude": 151.142127
+    },
+    {
+      "name": "Bankstown",
+      "slug": "bankstown",
+      "postcode": "2200",
+      "region": "Canterbury-Bankstown",
+      "latitude": -33.9149738,
+      "longitude": 151.0351633
+    },
+    {
+      "name": "Bexley",
+      "slug": "bexley",
+      "postcode": "2207",
+      "region": "St George",
+      "latitude": -33.9491076,
+      "longitude": 151.1272414
+    },
+    {
+      "name": "Blacktown",
+      "slug": "blacktown",
+      "postcode": "2148",
+      "region": "Blacktown",
+      "latitude": -33.7660526,
+      "longitude": 150.9110402
+    },
+    {
+      "name": "Bonnyrigg",
+      "slug": "bonnyrigg",
+      "postcode": "2177",
+      "region": "South West",
+      "latitude": -33.8965083,
+      "longitude": 150.8929553
+    },
+    {
+      "name": "Burwood",
+      "slug": "burwood",
+      "postcode": "2134",
+      "region": "Inner West",
+      "latitude": -33.8858088,
+      "longitude": 151.1024805
+    },
+    {
+      "name": "Campsie",
+      "slug": "campsie",
+      "postcode": "2194",
+      "region": "Canterbury-Bankstown",
+      "latitude": -33.9203641,
+      "longitude": 151.0997624
+    },
+    {
+      "name": "Canterbury",
+      "slug": "canterbury",
+      "postcode": "2193",
+      "region": "Canterbury-Bankstown",
+      "latitude": -33.9142977,
+      "longitude": 151.1146703
+    },
+    {
+      "name": "Caringbah",
+      "slug": "caringbah",
+      "postcode": "2229",
+      "region": "Sutherland Shire",
+      "latitude": -34.042076,
+      "longitude": 151.1220217
+    },
+    {
+      "name": "Condell Park",
+      "slug": "condell-park",
+      "postcode": "2200",
+      "region": "Canterbury-Bankstown",
+      "latitude": -33.9319525,
+      "longitude": 151.0188747
+    },
+    {
+      "name": "Darlinghurst",
+      "slug": "darlinghurst",
+      "postcode": "2010",
+      "region": "Inner City",
+      "latitude": -33.8790593,
+      "longitude": 151.215902
+    },
+    {
+      "name": "Darlington",
+      "slug": "darlington",
+      "postcode": "2000",
+      "region": "Inner City",
+      "latitude": -33.890862,
+      "longitude": 151.1932156
+    },
+    {
+      "name": "Denham Court",
+      "slug": "denham-court",
+      "postcode": "2565",
+      "region": "South West",
+      "latitude": -33.9915141,
+      "longitude": 150.8449688
+    },
+    {
+      "name": "Enfield",
+      "slug": "enfield",
+      "postcode": "2136",
+      "region": "Inner West",
+      "latitude": -33.8867605,
+      "longitude": 151.0925867
+    },
+    {
+      "name": "Fairfield",
+      "slug": "fairfield",
+      "postcode": "2165",
+      "region": "South West",
+      "latitude": -33.8674403,
+      "longitude": 150.8893222
+    },
+    {
+      "name": "Gledswood Hills",
+      "slug": "gledswood-hills",
+      "postcode": "2557",
+      "region": "Macarthur",
+      "latitude": -34.0202364,
+      "longitude": 150.7614074
+    },
+    {
+      "name": "Granville",
+      "slug": "granville",
+      "postcode": "2142",
+      "region": "Western Sydney",
+      "latitude": -33.8345938,
+      "longitude": 151.0108978
+    },
+    {
+      "name": "Guildford",
+      "slug": "guildford",
+      "postcode": "2161",
+      "region": "Western Sydney",
+      "latitude": -33.851869,
+      "longitude": 150.975364
+    },
+    {
+      "name": "Haymarket",
+      "slug": "haymarket",
+      "postcode": "2000",
+      "region": "Sydney CBD",
+      "latitude": -33.8815995,
+      "longitude": 151.2039785
+    },
+    {
+      "name": "Hurstville",
+      "slug": "hurstville",
+      "postcode": "2220",
+      "region": "St George",
+      "latitude": -33.9668927,
+      "longitude": 151.1019824
+    },
+    {
+      "name": "Kogarah",
+      "slug": "kogarah",
+      "postcode": "2217",
+      "region": "St George",
+      "latitude": -33.964443,
+      "longitude": 151.1322357
+    },
+    {
+      "name": "Lakemba",
+      "slug": "lakemba",
+      "postcode": "2195",
+      "region": "Canterbury-Bankstown",
+      "latitude": -33.9140517,
+      "longitude": 151.0801789
+    },
+    {
+      "name": "Lidcombe",
+      "slug": "lidcombe",
+      "postcode": "2141",
+      "region": "Western Sydney",
+      "latitude": -33.86107,
+      "longitude": 151.04531
+    },
+    {
+      "name": "Liverpool",
+      "slug": "liverpool",
+      "postcode": "2170",
+      "region": "Liverpool",
+      "latitude": -33.9318655,
+      "longitude": 150.9124943
+    },
+    {
+      "name": "Marrickville",
+      "slug": "marrickville",
+      "postcode": "2000",
+      "region": "Inner West",
+      "latitude": -33.9125276,
+      "longitude": 151.1605664
+    },
+    {
+      "name": "Marsden Park",
+      "slug": "marsden-park",
+      "postcode": "2765",
+      "region": "Blacktown",
+      "latitude": -33.6956552,
+      "longitude": 150.8147975
+    },
+    {
+      "name": "Mascot",
+      "slug": "mascot",
+      "postcode": "2020",
+      "region": "South Sydney",
+      "latitude": -33.9215783,
+      "longitude": 151.1875163
+    },
+    {
+      "name": "Merrylands",
+      "slug": "merrylands",
+      "postcode": "2160",
+      "region": "Western Sydney",
+      "latitude": -33.8356115,
+      "longitude": 150.9887819
+    },
+    {
+      "name": "Newtown",
+      "slug": "newtown",
+      "postcode": "2042",
+      "region": "Inner West",
+      "latitude": -33.8977974,
+      "longitude": 151.1772124
+    },
+    {
+      "name": "North Parramatta",
+      "slug": "north-parramatta",
+      "postcode": "2151",
+      "region": "Parramatta",
+      "latitude": -33.8013251,
+      "longitude": 151.0085196
+    },
+    {
+      "name": "Parramatta",
+      "slug": "parramatta",
+      "postcode": "2150",
+      "region": "Parramatta",
+      "latitude": -33.812328,
+      "longitude": 151.0034055
+    },
+    {
+      "name": "Pennant Hills",
+      "slug": "pennant-hills",
+      "postcode": "2120",
+      "region": "Hills District",
+      "latitude": -33.7384663,
+      "longitude": 151.0716639
+    },
+    {
+      "name": "Penrith",
+      "slug": "penrith",
+      "postcode": "2750",
+      "region": "Penrith",
+      "latitude": -33.7524198,
+      "longitude": 150.6956816
+    },
+    {
+      "name": "Punchbowl",
+      "slug": "punchbowl",
+      "postcode": "2196",
+      "region": "Canterbury-Bankstown",
+      "latitude": -33.9257789,
+      "longitude": 151.0560462
+    },
+    {
+      "name": "Redfern",
+      "slug": "redfern",
+      "postcode": "2016",
+      "region": "Inner City",
+      "latitude": -33.8925892,
+      "longitude": 151.2025737
+    },
+    {
+      "name": "Revesby",
+      "slug": "revesby",
+      "postcode": "2212",
+      "region": "Canterbury-Bankstown",
+      "latitude": -33.9436876,
+      "longitude": 151.0137191
+    },
+    {
+      "name": "Rosebery",
+      "slug": "rosebery",
+      "postcode": "2000",
+      "region": "South Sydney",
+      "latitude": -33.9185861,
+      "longitude": 151.204692
+    },
+    {
+      "name": "Rosehill",
+      "slug": "rosehill",
+      "postcode": "2000",
+      "region": "Western Sydney",
+      "latitude": -33.8263889,
+      "longitude": 151.0305556
+    },
+    {
+      "name": "Shalvey",
+      "slug": "shalvey",
+      "postcode": "2770",
+      "region": "Blacktown",
+      "latitude": -33.7284314,
+      "longitude": 150.8125626
+    },
+    {
+      "name": "Smithfield",
+      "slug": "smithfield",
+      "postcode": "2164",
+      "region": "South West",
+      "latitude": -33.849449,
+      "longitude": 150.9423979
+    },
+    {
+      "name": "Surry Hills",
+      "slug": "surry-hills",
+      "postcode": "2010",
+      "region": "Inner City",
+      "latitude": -33.89179,
+      "longitude": 151.21284
+    },
+    {
+      "name": "Sydney CBD",
+      "slug": "sydney-cbd",
+      "postcode": "2000",
+      "region": "Sydney CBD",
+      "latitude": -33.8744313,
+      "longitude": 151.2066632
+    },
+    {
+      "name": "Ultimo",
+      "slug": "ultimo",
+      "postcode": "2007",
+      "region": "Inner City",
+      "latitude": -33.88359,
+      "longitude": 151.2028
+    },
+    {
+      "name": "West Hoxton",
+      "slug": "west-hoxton",
+      "postcode": "2173",
+      "region": "South West",
+      "latitude": -33.9549482,
+      "longitude": 150.9449651
+    },
+    {
+      "name": "Westmead",
+      "slug": "westmead",
+      "postcode": "2145",
+      "region": "Western Sydney",
+      "latitude": -33.8076498,
+      "longitude": 150.9877265
+    },
+    {
+      "name": "Yagoona",
+      "slug": "yagoona",
+      "postcode": "2199",
+      "region": "Canterbury-Bankstown",
+      "latitude": -33.9047876,
+      "longitude": 151.0083796
+    }
+  ],
+  "restaurants": [
+    {
+      "name": "Sydney City Kebabs",
+      "slug": "sydney-city-kebabs",
+      "suburb_slug": "haymarket",
+      "address_line": "790 George St, Haymarket NSW 2000",
+      "postcode": "2000",
+      "latitude": -33.8813963,
+      "longitude": 151.2049489,
+      "location_precision": "address",
+      "google_rating": 4.7,
+      "google_review_count": 2190,
+      "google_place_id": "ChIJj5oijiOuEmsRLp4yU0i4iF4",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "11:00",
+            "close": "03:30"
+          }
+        ],
+        "sat": [
+          {
+            "open": "11:00",
+            "close": "03:30"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Liverpool St Kebabs and Pizza",
+      "slug": "liverpool-st-kebabs-and-pizza",
+      "suburb_slug": "sydney-cbd",
+      "address_line": "94 Liverpool St, Sydney NSW 2000",
+      "postcode": "2000",
+      "latitude": -33.8768575,
+      "longitude": 151.212004,
+      "location_precision": "address",
+      "google_rating": 4.8,
+      "google_review_count": 86,
+      "google_place_id": "ChIJB9OLmKWvEmsRpZfLEL1kzD4",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "CENTER POINT City Kebab, Pizza, Burger Coffee",
+      "slug": "center-point-city-kebab-pizza-burger-coffee",
+      "suburb_slug": "sydney-cbd",
+      "address_line": "25 Market St, Sydney NSW 2000",
+      "postcode": "2000",
+      "latitude": -33.8711288,
+      "longitude": 151.2052189,
+      "location_precision": "address",
+      "google_rating": 4.8,
+      "google_review_count": 87,
+      "google_place_id": "ChIJMZ8WSMqvEmsR8yMNaDXmm9Y",
+      "opening_hours": null,
+      "category": "doner_kebab_restaurant",
+      "styles": [
+        "doner",
+        "kebab"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Haymarket Kebabs",
+      "slug": "haymarket-kebabs",
+      "suburb_slug": "haymarket",
+      "address_line": "2 Quay St, Haymarket NSW 2000",
+      "postcode": "2000",
+      "latitude": -33.880163,
+      "longitude": 151.2031691,
+      "location_precision": "address",
+      "google_rating": 4.5,
+      "google_review_count": 122,
+      "google_place_id": "ChIJW_0f1VavEmsRip3q_Psb-mE",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "10:00",
+            "close": "17:30"
+          }
+        ],
+        "wed": [
+          {
+            "open": "10:00",
+            "close": "17:30"
+          }
+        ],
+        "thu": [
+          {
+            "open": "10:00",
+            "close": "17:30"
+          }
+        ],
+        "fri": [
+          {
+            "open": "10:00",
+            "close": "17:30"
+          }
+        ],
+        "sat": [
+          {
+            "open": "10:00",
+            "close": "17:30"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": "Mon/Tue hours not returned in current business result.",
+      "located": true
+    },
+    {
+      "name": "Toros Kebab ASQ",
+      "slug": "toros-kebab-asq",
+      "suburb_slug": "sydney-cbd",
+      "address_line": "Shop 420/264 George St, Sydney NSW 2000",
+      "postcode": "2000",
+      "latitude": -33.8747234,
+      "longitude": 151.2053644,
+      "location_precision": "suburb",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJKSa8wYyvEmsRbys5J3aWEF0",
+      "opening_hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "16:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "16:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "16:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "16:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "16:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Official Toros ordering site",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Metro Pita Kebab",
+      "slug": "metro-pita-kebab",
+      "suburb_slug": "ultimo",
+      "address_line": "Sydney NSW 2007",
+      "postcode": "2007",
+      "latitude": -33.88359,
+      "longitude": 151.2028,
+      "location_precision": "provided",
+      "google_rating": 4.2,
+      "google_review_count": 6000,
+      "google_place_id": "ChIJm7jmlCauEmsR0JlWkWybIYc",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "07:00",
+            "close": "05:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "07:00",
+            "close": "04:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "07:00",
+            "close": "04:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "07:00",
+            "close": "04:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "07:00",
+            "close": "05:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "07:00",
+            "close": "05:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "07:00",
+            "close": "05:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "DoorDash listing",
+      "data_last_verified": null,
+      "verification_notes": "Coordinates from Around Us; hours cross midnight.",
+      "located": true
+    },
+    {
+      "name": "Five Star Kebabs",
+      "slug": "five-star-kebabs",
+      "suburb_slug": "darlinghurst",
+      "address_line": "185 Oxford St, Darlinghurst NSW 2010",
+      "postcode": "2010",
+      "latitude": -33.8806218,
+      "longitude": 151.2165163,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJC9pBqRCuEmsR7N9ZV0E8hw4",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "00:00",
+            "close": "24:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "LocalSearch",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "ICONIC KEBABS AND DESI FUSION",
+      "slug": "iconic-kebabs-and-desi-fusion",
+      "suburb_slug": "darlinghurst",
+      "address_line": "312 Crown St, Darlinghurst NSW 2010",
+      "postcode": "2010",
+      "latitude": -33.8806611,
+      "longitude": 151.2151455,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJu-SIW7mvEmsRbVL6eOXM98I",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "17:00",
+            "close": "03:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "17:00",
+            "close": "03:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "17:00",
+            "close": "03:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "17:00",
+            "close": "03:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "17:00",
+            "close": "03:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "17:00",
+            "close": "04:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "17:00",
+            "close": "04:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "LocalSearch",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Cappadocia Cafe & Restaurant",
+      "slug": "cappadocia-cafe-restaurant",
+      "suburb_slug": "darlinghurst",
+      "address_line": "82-84 Stanley St, Darlinghurst NSW 2010",
+      "postcode": "2010",
+      "latitude": -33.8758949,
+      "longitude": 151.2160441,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJZ-jxFYevEmsR5zfoy_5oi4I",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "07:00",
+            "close": "16:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "06:00",
+            "close": "16:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "06:00",
+            "close": "16:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "06:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "06:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "06:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "07:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "category": "Turkish_restaurant",
+      "styles": [
+        "kebab",
+        "turkish"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "LocalSearch",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Erciyes Restaurant",
+      "slug": "erciyes-restaurant",
+      "suburb_slug": "surry-hills",
+      "address_line": "409 Cleveland St, Surry Hills NSW 2010",
+      "postcode": "2010",
+      "latitude": -33.89179,
+      "longitude": 151.21284,
+      "location_precision": "provided",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJxdflSuCxEmsRGfkp6T0DK2Y",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "11:00",
+            "close": "23:30"
+          }
+        ],
+        "mon": [
+          {
+            "open": "11:00",
+            "close": "23:30"
+          }
+        ],
+        "tue": [
+          {
+            "open": "11:00",
+            "close": "23:30"
+          }
+        ],
+        "wed": [
+          {
+            "open": "11:00",
+            "close": "23:30"
+          }
+        ],
+        "thu": [
+          {
+            "open": "11:00",
+            "close": "23:30"
+          }
+        ],
+        "fri": [
+          {
+            "open": "11:00",
+            "close": "23:30"
+          }
+        ],
+        "sat": [
+          {
+            "open": "11:00",
+            "close": "23:30"
+          }
+        ]
+      },
+      "category": "Turkish_restaurant",
+      "styles": [
+        "kebab",
+        "turkish"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "LocalSearch",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Redfern Kebab",
+      "slug": "redfern-kebab",
+      "suburb_slug": "redfern",
+      "address_line": "129-133 Redfern St, Redfern NSW 2016",
+      "postcode": "2016",
+      "latitude": -33.8925892,
+      "longitude": 151.2025737,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJpRmz7rOxEmsRxlwRhyjSxEU",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "10:30",
+            "close": "22:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "10:30",
+            "close": "01:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "LocalSearch",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Open Sesame Sydney",
+      "slug": "open-sesame-sydney",
+      "suburb_slug": "sydney-cbd",
+      "address_line": "Shop CQT.08/180 George St, Sydney NSW 2000",
+      "postcode": "2000",
+      "latitude": -33.8747234,
+      "longitude": 151.2053644,
+      "location_precision": "suburb",
+      "google_rating": 4.7,
+      "google_review_count": 906,
+      "google_place_id": "ChIJbcBT3ZqvEmsR9_PAlbbIKjQ",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "11:00",
+            "close": "22:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "12:00",
+            "close": "22:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "11:00",
+            "close": "22:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "11:00",
+            "close": "22:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "11:00",
+            "close": "22:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "11:00",
+            "close": "22:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "11:00",
+            "close": "22:00"
+          }
+        ]
+      },
+      "category": "Middle_Eastern_restaurant",
+      "styles": [
+        "shawarma",
+        "kebab"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Turkuaz Turkish Cuisine",
+      "slug": "turkuaz-turkish-cuisine",
+      "suburb_slug": "newtown",
+      "address_line": "121 Enmore Rd, Newtown NSW 2042",
+      "postcode": "2042",
+      "latitude": -33.8986402,
+      "longitude": 151.1736956,
+      "location_precision": "address",
+      "google_rating": 4.7,
+      "google_review_count": 673,
+      "google_place_id": "ChIJ2cFaYiSxEmsRLNTPXwwLPUE",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "12:00",
+            "close": "22:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "17:00",
+            "close": "22:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "17:00",
+            "close": "22:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "17:00",
+            "close": "22:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "17:00",
+            "close": "22:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "17:00",
+            "close": "22:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "12:00",
+            "close": "22:00"
+          }
+        ]
+      },
+      "category": "Turkish_restaurant",
+      "styles": [
+        "kebab",
+        "turkish"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Jasmin Lebanese Restaurant",
+      "slug": "jasmin-lebanese-restaurant",
+      "suburb_slug": "newtown",
+      "address_line": "357 King St, Newtown NSW 2042",
+      "postcode": "2042",
+      "latitude": -33.8986389,
+      "longitude": 151.1777523,
+      "location_precision": "address",
+      "google_rating": 4.5,
+      "google_review_count": 121,
+      "google_place_id": "ChIJHycNTwCxEmsRPuyb4Hw5eC0",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "09:45",
+            "close": "22:30"
+          }
+        ],
+        "mon": [
+          {
+            "open": "09:45",
+            "close": "22:30"
+          }
+        ],
+        "tue": [
+          {
+            "open": "09:45",
+            "close": "22:30"
+          }
+        ],
+        "wed": [
+          {
+            "open": "09:45",
+            "close": "22:30"
+          }
+        ],
+        "thu": [
+          {
+            "open": "09:45",
+            "close": "22:30"
+          }
+        ],
+        "fri": [
+          {
+            "open": "09:45",
+            "close": "22:30"
+          }
+        ],
+        "sat": [
+          {
+            "open": "09:45",
+            "close": "22:30"
+          }
+        ]
+      },
+      "category": "Lebanese_restaurant",
+      "styles": [
+        "shawarma",
+        "lebanese"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Arabella Lebanese Restaurant Newtown",
+      "slug": "arabella-lebanese-restaurant-newtown",
+      "suburb_slug": "newtown",
+      "address_line": "Unit 12/489-491 King St, Newtown NSW 2042",
+      "postcode": "2042",
+      "latitude": -33.8961132,
+      "longitude": 151.1801893,
+      "location_precision": "suburb",
+      "google_rating": 4.4,
+      "google_review_count": 1629,
+      "google_place_id": "ChIJBaKO2UmwEmsRuJSlu_pzOwg",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "12:00",
+            "close": "01:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "12:00",
+            "close": "00:30"
+          }
+        ],
+        "tue": [
+          {
+            "open": "12:00",
+            "close": "00:30"
+          }
+        ],
+        "wed": [
+          {
+            "open": "12:00",
+            "close": "00:30"
+          }
+        ],
+        "thu": [
+          {
+            "open": "12:00",
+            "close": "00:30"
+          }
+        ],
+        "fri": [
+          {
+            "open": "12:00",
+            "close": "01:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "12:00",
+            "close": "01:00"
+          }
+        ]
+      },
+      "category": "Lebanese_restaurant",
+      "styles": [
+        "shawarma",
+        "lebanese"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Kebab Style",
+      "slug": "kebab-style",
+      "suburb_slug": "hurstville",
+      "address_line": "225H Forest Rd, Hurstville NSW 2220",
+      "postcode": "2220",
+      "latitude": -33.9668927,
+      "longitude": 151.1019824,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJK4qvAaO5EmsRRrMWf4GRDig",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "09:30",
+            "close": "20:30"
+          }
+        ],
+        "mon": [
+          {
+            "open": "09:30",
+            "close": "20:30"
+          }
+        ],
+        "tue": [
+          {
+            "open": "09:30",
+            "close": "20:30"
+          }
+        ],
+        "wed": [
+          {
+            "open": "09:30",
+            "close": "20:30"
+          }
+        ],
+        "thu": [
+          {
+            "open": "09:30",
+            "close": "20:30"
+          }
+        ],
+        "fri": [
+          {
+            "open": "09:30",
+            "close": "20:30"
+          }
+        ],
+        "sat": [
+          {
+            "open": "09:30",
+            "close": "20:30"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Hurstville Central",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Kogarah Kebabs",
+      "slug": "kogarah-kebabs",
+      "suburb_slug": "kogarah",
+      "address_line": "17 Railway Parade, Kogarah NSW 2217",
+      "postcode": "2217",
+      "latitude": -33.964443,
+      "longitude": 151.1322357,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJqZmo7-S5EmsR4NVz7jS3BlY",
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "LocalSearch",
+      "data_last_verified": null,
+      "verification_notes": "Current Google result reports Temporarily Closed; hours not returned.",
+      "located": true
+    },
+    {
+      "name": "Mascot Kebab & Deli",
+      "slug": "mascot-kebab-deli",
+      "suburb_slug": "mascot",
+      "address_line": "59/7 Bourke St, Mascot NSW 2020",
+      "postcode": "2020",
+      "latitude": -33.9215783,
+      "longitude": 151.1875163,
+      "location_precision": "address",
+      "google_rating": 4.7,
+      "google_review_count": 7000,
+      "google_place_id": "ChIJH_HptqqxEmsR8_FTfyGcl9U",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "10:00",
+            "close": "00:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "09:00",
+            "close": "00:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "09:00",
+            "close": "00:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "09:00",
+            "close": "00:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "09:00",
+            "close": "00:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "09:00",
+            "close": "01:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "09:00",
+            "close": "01:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Uber Eats listing",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Metro One Kebab Ashfield",
+      "slug": "metro-one-kebab-ashfield",
+      "suburb_slug": "ashfield",
+      "address_line": "309 Liverpool Rd, Ashfield NSW 2131",
+      "postcode": "2131",
+      "latitude": -33.8878188,
+      "longitude": 151.1233564,
+      "location_precision": "address",
+      "google_rating": 4.5,
+      "google_review_count": 1096,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Sims Kebab House",
+      "slug": "sims-kebab-house",
+      "suburb_slug": "ashfield",
+      "address_line": "160 Liverpool Rd, Ashfield NSW 2131",
+      "postcode": "2131",
+      "latitude": -33.8885898,
+      "longitude": 151.1183531,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "FindGlocal listing",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Smokey's Kebabs",
+      "slug": "smokey-s-kebabs",
+      "suburb_slug": "enfield",
+      "address_line": "138 Liverpool Rd, Enfield NSW 2136",
+      "postcode": "2136",
+      "latitude": -33.8867605,
+      "longitude": 151.0925867,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJkYLmCOS6EmsRCC1KDaMbkoI",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "10:00",
+            "close": "02:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "10:00",
+            "close": "02:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "10:00",
+            "close": "02:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "10:00",
+            "close": "02:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "10:00",
+            "close": "02:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "10:00",
+            "close": "03:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "10:00",
+            "close": "03:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "FindGlocal listing",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Brothers Kebabs",
+      "slug": "brothers-kebabs-banksia",
+      "suburb_slug": "banksia",
+      "address_line": "Princes Highway, Banksia NSW",
+      "postcode": "2000",
+      "latitude": -33.9443751,
+      "longitude": 151.142127,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Sydney community recommendation",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Brothers Kebabs",
+      "slug": "brothers-kebabs-annandale",
+      "suburb_slug": "annandale",
+      "address_line": "Parramatta Rd, Annandale NSW",
+      "postcode": "2000",
+      "latitude": -33.8868983,
+      "longitude": 151.1759642,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Sydney community recommendation",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Ozturk Jr",
+      "slug": "ozturk-jr",
+      "suburb_slug": "darlington",
+      "address_line": "Darlington NSW",
+      "postcode": "2000",
+      "latitude": -33.890862,
+      "longitude": 151.1932156,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "Turkish_kebab",
+      "styles": [
+        "kebab",
+        "turkish"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Sydney community recommendation",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "CK's Canterbury Kebabs & Burgers",
+      "slug": "ck-s-canterbury-kebabs-burgers",
+      "suburb_slug": "canterbury",
+      "address_line": "296 Canterbury Rd, Canterbury NSW 2193",
+      "postcode": "2193",
+      "latitude": -33.9142977,
+      "longitude": 151.1146703,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJrbRvCl26EmsRWpxlpdqnWek",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "12:00",
+            "close": "03:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "10:00",
+            "close": "04:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "10:00",
+            "close": "04:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "10:00",
+            "close": "04:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "10:00",
+            "close": "04:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "10:00",
+            "close": "05:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "10:00",
+            "close": "05:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Recent owner/community report",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Auburn Kebab House",
+      "slug": "auburn-kebab-house",
+      "suburb_slug": "auburn",
+      "address_line": "77 Rawson St, Auburn NSW 2144",
+      "postcode": "2144",
+      "latitude": -33.8465619,
+      "longitude": 151.0303173,
+      "location_precision": "address",
+      "google_rating": 4.4,
+      "google_review_count": 871,
+      "google_place_id": "ChIJrx5yJLK8EmsRR9Yr87YH4k0",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "10:00",
+            "close": "23:45"
+          }
+        ],
+        "mon": [
+          {
+            "open": "10:00",
+            "close": "23:45"
+          }
+        ],
+        "tue": [
+          {
+            "open": "10:00",
+            "close": "23:45"
+          }
+        ],
+        "wed": [
+          {
+            "open": "10:00",
+            "close": "23:45"
+          }
+        ],
+        "thu": [
+          {
+            "open": "10:00",
+            "close": "23:45"
+          }
+        ],
+        "fri": [
+          {
+            "open": "10:00",
+            "close": "23:45"
+          }
+        ],
+        "sat": [
+          {
+            "open": "10:00",
+            "close": "23:45"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search + official website",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "New Star Kebab Family Restaurant",
+      "slug": "new-star-kebab-family-restaurant",
+      "suburb_slug": "auburn",
+      "address_line": "15 Auburn Rd, Auburn NSW 2144",
+      "postcode": "2144",
+      "latitude": -33.8505888,
+      "longitude": 151.0328209,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "LocalSearch",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Yay Brothers Kebab",
+      "slug": "yay-brothers-kebab",
+      "suburb_slug": "auburn",
+      "address_line": "Auburn Central, Queen St, Auburn NSW 2144",
+      "postcode": "2144",
+      "latitude": -33.849979,
+      "longitude": 151.0317195,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Auburn Central",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Hala Shawarma",
+      "slug": "hala-shawarma",
+      "suburb_slug": "auburn",
+      "address_line": "87 Auburn Rd, Auburn NSW 2144",
+      "postcode": "2144",
+      "latitude": -33.8581432,
+      "longitude": 151.0313681,
+      "location_precision": "address",
+      "google_rating": 4.9,
+      "google_review_count": 58,
+      "google_place_id": "ChIJvQyAK7m9EmsRnPaUIzKnwXI",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "11:00",
+            "close": "00:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "11:00",
+            "close": "00:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "11:00",
+            "close": "00:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "11:00",
+            "close": "00:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "11:00",
+            "close": "00:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "11:00",
+            "close": "00:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "11:00",
+            "close": "00:00"
+          }
+        ]
+      },
+      "category": "shawarma_takeaway",
+      "styles": [
+        "shawarma",
+        "lebanese"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Crazy Brothers",
+      "slug": "crazy-brothers",
+      "suburb_slug": "lidcombe",
+      "address_line": "31B John St, Lidcombe NSW 2141",
+      "postcode": "2141",
+      "latitude": -33.86107,
+      "longitude": 151.04531,
+      "location_precision": "provided",
+      "google_rating": 4.6,
+      "google_review_count": 295,
+      "google_place_id": "ChIJt6wt82S9EmsRnILUtGSsPZM",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "12:00",
+            "close": "00:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "10:00",
+            "close": "00:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "10:00",
+            "close": "00:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "10:00",
+            "close": "00:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "10:00",
+            "close": "00:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "10:00",
+            "close": "00:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "10:00",
+            "close": "00:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Bankstown Kebab House",
+      "slug": "bankstown-kebab-house",
+      "suburb_slug": "bankstown",
+      "address_line": "Shop/78 Bankstown City Plaza, Bankstown NSW 2200",
+      "postcode": "2200",
+      "latitude": -33.91811,
+      "longitude": 151.03359,
+      "location_precision": "provided",
+      "google_rating": 4.4,
+      "google_review_count": 163,
+      "google_place_id": "ChIJa26XaVu9EmsR_FufDFn2W8U",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "10:00",
+            "close": "22:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "09:00",
+            "close": "23:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "09:00",
+            "close": "23:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "09:00",
+            "close": "23:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "09:00",
+            "close": "00:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "09:00",
+            "close": "00:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "09:00",
+            "close": "00:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search + official ordering site",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Sydney Star Kebab",
+      "slug": "sydney-star-kebab",
+      "suburb_slug": "bankstown",
+      "address_line": "12 Marion St, Bankstown NSW 2200",
+      "postcode": "2200",
+      "latitude": -33.9174209,
+      "longitude": 151.0326877,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJzWBx9hq8EmsRgolijOiJEQw",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "09:00",
+            "close": "23:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "09:00",
+            "close": "23:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "09:00",
+            "close": "23:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "09:00",
+            "close": "23:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "09:00",
+            "close": "23:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "09:00",
+            "close": "23:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "09:00",
+            "close": "23:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Aladdin's Kebab",
+      "slug": "aladdin-s-kebab",
+      "suburb_slug": "bankstown",
+      "address_line": "North Tce, Bankstown NSW 2200",
+      "postcode": "2200",
+      "latitude": -33.9171983,
+      "longitude": 151.040538,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": "ChIJj7WBZgW8EmsRGP59UqDIg4Y",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "10:00",
+            "close": "16:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "09:00",
+            "close": "17:30"
+          }
+        ],
+        "tue": [
+          {
+            "open": "09:00",
+            "close": "17:30"
+          }
+        ],
+        "wed": [
+          {
+            "open": "09:00",
+            "close": "17:30"
+          }
+        ],
+        "thu": [
+          {
+            "open": "09:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "09:00",
+            "close": "17:30"
+          }
+        ],
+        "sat": [
+          {
+            "open": "09:00",
+            "close": "17:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Bad Boys Co, Kebab, Burgers, Pizza and Coffee",
+      "slug": "bad-boys-co-kebab-burgers-pizza-and-coffee",
+      "suburb_slug": "lakemba",
+      "address_line": "4A/112 Benaroon Rd, Lakemba NSW 2195",
+      "postcode": "2195",
+      "latitude": -33.9140517,
+      "longitude": 151.0801789,
+      "location_precision": "address",
+      "google_rating": 4.8,
+      "google_review_count": 143,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "The Kebab BROTHER'S",
+      "slug": "the-kebab-brother-s",
+      "suburb_slug": "punchbowl",
+      "address_line": "280 The Boulevarde, Punchbowl NSW 2196",
+      "postcode": "2196",
+      "latitude": -33.9257789,
+      "longitude": 151.0560462,
+      "location_precision": "address",
+      "google_rating": 4.1,
+      "google_review_count": 220,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "Turkish_restaurant",
+      "styles": [
+        "kebab",
+        "turkish"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Yagoona Brother's Kebab",
+      "slug": "yagoona-brother-s-kebab",
+      "suburb_slug": "yagoona",
+      "address_line": "449 Hume Hwy, Yagoona NSW 2199",
+      "postcode": "2199",
+      "latitude": -33.9047876,
+      "longitude": 151.0083796,
+      "location_precision": "address",
+      "google_rating": 3.6,
+      "google_review_count": 203,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Sahara Grill Turkish Street Food",
+      "slug": "sahara-grill-turkish-street-food",
+      "suburb_slug": "campsie",
+      "address_line": "Charlotte St, Campsie NSW 2194",
+      "postcode": "2194",
+      "latitude": -33.9203641,
+      "longitude": 151.0997624,
+      "location_precision": "address",
+      "google_rating": 4.7,
+      "google_review_count": 143,
+      "google_place_id": "ChIJrd13GAC7EmsRxzW_W3eASrI",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "09:00",
+            "close": "21:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "09:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "09:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "09:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "09:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "09:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "09:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": "Uber Eats currently lists 09:00-20:30; Google business result lists 09:00-21:00. Needs reconciliation.",
+      "located": true
+    },
+    {
+      "name": "Kebab",
+      "slug": "kebab",
+      "suburb_slug": "burwood",
+      "address_line": "FC6/100 Burwood Rd, Burwood NSW 2134",
+      "postcode": "2134",
+      "latitude": -33.8858088,
+      "longitude": 151.1024805,
+      "location_precision": "suburb",
+      "google_rating": 3.8,
+      "google_review_count": 158,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Kebab Kulture",
+      "slug": "kebab-kulture",
+      "suburb_slug": "parramatta",
+      "address_line": "Westfield Parramatta, 159-175 Church St, Parramatta NSW 2150",
+      "postcode": "2150",
+      "latitude": -33.8178049,
+      "longitude": 151.0020864,
+      "location_precision": "address",
+      "google_rating": 4.8,
+      "google_review_count": 72,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "takeout_restaurant",
+      "styles": [
+        "kebab"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Western Sydney Kebabs",
+      "slug": "western-sydney-kebabs",
+      "suburb_slug": "parramatta",
+      "address_line": "55 George St, Parramatta NSW 2150",
+      "postcode": "2150",
+      "latitude": -33.813483,
+      "longitude": 151.0031256,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Istanbul in Parra",
+      "slug": "istanbul-in-parra",
+      "suburb_slug": "parramatta",
+      "address_line": "402 Church St, Parramatta NSW 2150",
+      "postcode": "2150",
+      "latitude": -33.8040398,
+      "longitude": 151.0057439,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "Turkish_restaurant",
+      "styles": [
+        "kebab",
+        "turkish"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Toros Kebabs",
+      "slug": "toros-kebabs",
+      "suburb_slug": "parramatta",
+      "address_line": "1129/159-175 Church St, Parramatta NSW 2150",
+      "postcode": "2150",
+      "latitude": -33.8139843,
+      "longitude": 151.002666,
+      "location_precision": "suburb",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Cheeky Burgers & Kebabs",
+      "slug": "cheeky-burgers-kebabs",
+      "suburb_slug": "north-parramatta",
+      "address_line": "90R Victoria Rd, North Parramatta NSW 2151",
+      "postcode": "2151",
+      "latitude": -33.8085678,
+      "longitude": 151.016464,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Jimmy's Kebab",
+      "slug": "jimmy-s-kebab",
+      "suburb_slug": "north-parramatta",
+      "address_line": "618 Church St, North Parramatta NSW 2151",
+      "postcode": "2151",
+      "latitude": -33.7940824,
+      "longitude": 151.0005751,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Westmead Kebab House",
+      "slug": "westmead-kebab-house",
+      "suburb_slug": "westmead",
+      "address_line": "Shop 5/29-33 Darcy Rd, Westmead NSW 2145",
+      "postcode": "2145",
+      "latitude": -33.8076498,
+      "longitude": 150.9877265,
+      "location_precision": "suburb",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Aussie Hours",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Granville Sofra Kebab",
+      "slug": "granville-sofra-kebab",
+      "suburb_slug": "granville",
+      "address_line": "11 South St, Granville NSW 2142",
+      "postcode": "2142",
+      "latitude": -33.8345938,
+      "longitude": 151.0108978,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Aussie Hours",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Char Grill Kebabs",
+      "slug": "char-grill-kebabs",
+      "suburb_slug": "merrylands",
+      "address_line": "Shop 2071/191 Pitt St, Merrylands NSW 2160",
+      "postcode": "2160",
+      "latitude": -33.8350765,
+      "longitude": 150.9860379,
+      "location_precision": "suburb",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Aussie Hours",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Kabab Al Hojat",
+      "slug": "kabab-al-hojat",
+      "suburb_slug": "merrylands",
+      "address_line": "2/254 Pitt St, Merrylands NSW 2160",
+      "postcode": "2160",
+      "latitude": -33.8361466,
+      "longitude": 150.9915259,
+      "location_precision": "address",
+      "google_rating": 4.4,
+      "google_review_count": 978,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Taste of Sofra Guildford",
+      "slug": "taste-of-sofra-guildford",
+      "suburb_slug": "guildford",
+      "address_line": "331 Guildford Rd, Guildford NSW 2161",
+      "postcode": "2161",
+      "latitude": -33.851869,
+      "longitude": 150.975364,
+      "location_precision": "address",
+      "google_rating": 4.8,
+      "google_review_count": 88,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "Turkish_restaurant",
+      "styles": [
+        "kebab",
+        "turkish"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Abu Ali Restaurant",
+      "slug": "abu-ali-restaurant",
+      "suburb_slug": "fairfield",
+      "address_line": "1/41-47 Spencer St, Fairfield NSW 2165",
+      "postcode": "2165",
+      "latitude": -33.8674403,
+      "longitude": 150.8893222,
+      "location_precision": "suburb",
+      "google_rating": 4.3,
+      "google_review_count": 1483,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "Middle_Eastern_restaurant",
+      "styles": [
+        "shawarma",
+        "kebab"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Cam's Kebabs and Pide House",
+      "slug": "cam-s-kebabs-and-pide-house",
+      "suburb_slug": "liverpool",
+      "address_line": "78 Hoxton Park Rd, Liverpool NSW 2170",
+      "postcode": "2170",
+      "latitude": -33.9272174,
+      "longitude": 150.9048792,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Zozan Kebabs Liverpool",
+      "slug": "zozan-kebabs-liverpool",
+      "suburb_slug": "liverpool",
+      "address_line": "Westfield Liverpool, Shop 1013, Level 1 Macquarie St, Liverpool NSW 2170",
+      "postcode": "2170",
+      "latitude": -33.9525886,
+      "longitude": 150.898844,
+      "location_precision": "suburb",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Official website + Westfield",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Liverpool Kebab House",
+      "slug": "liverpool-kebab-house",
+      "suburb_slug": "liverpool",
+      "address_line": "3/42 Elizabeth St, Liverpool NSW 2170",
+      "postcode": "2170",
+      "latitude": -33.9204874,
+      "longitude": 150.9263298,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Iraqi Kebab Station",
+      "slug": "iraqi-kebab-station",
+      "suburb_slug": "liverpool",
+      "address_line": "142 Terminus St, Liverpool NSW 2170",
+      "postcode": "2170",
+      "latitude": -33.9271688,
+      "longitude": 150.9199243,
+      "location_precision": "address",
+      "google_rating": 4.8,
+      "google_review_count": 118,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "Iraqi_restaurant",
+      "styles": [
+        "shawarma",
+        "kebab"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "The Original Doner Kebab Co",
+      "slug": "the-original-doner-kebab-co",
+      "suburb_slug": "revesby",
+      "address_line": "Shop 13/64 Beaconsfield St, Revesby NSW 2212",
+      "postcode": "2212",
+      "latitude": -33.9436876,
+      "longitude": 151.0137191,
+      "location_precision": "suburb",
+      "google_rating": 4.9,
+      "google_review_count": 40,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Shawarma House Sydney",
+      "slug": "shawarma-house-sydney",
+      "suburb_slug": "revesby",
+      "address_line": "Unit 1A/9 Mavis St, Revesby NSW 2212",
+      "postcode": "2212",
+      "latitude": -33.9436876,
+      "longitude": 151.0137191,
+      "location_precision": "suburb",
+      "google_rating": 4.7,
+      "google_review_count": 141,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "shawarma_takeaway",
+      "styles": [
+        "shawarma",
+        "lebanese"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "KEB UP - German D\u00f6ner Kebab",
+      "slug": "keb-up-german-d-ner-kebab",
+      "suburb_slug": "bonnyrigg",
+      "address_line": "462 Elizabeth Dr, Bonnyrigg NSW 2177",
+      "postcode": "2177",
+      "latitude": -33.8965083,
+      "longitude": 150.8929553,
+      "location_precision": "address",
+      "google_rating": 4.6,
+      "google_review_count": 42,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "doner_kebab",
+      "styles": [
+        "doner",
+        "kebab"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Blacktown Kebabs and Burgers",
+      "slug": "blacktown-kebabs-and-burgers",
+      "suburb_slug": "blacktown",
+      "address_line": "69 Richmond Rd, Blacktown NSW 2148",
+      "postcode": "2148",
+      "latitude": -33.7618564,
+      "longitude": 150.8996585,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Cylex + local listing",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "King of Kebabs",
+      "slug": "king-of-kebabs",
+      "suburb_slug": "blacktown",
+      "address_line": "3 St Martins Cres, Blacktown NSW 2148",
+      "postcode": "2148",
+      "latitude": -33.7815718,
+      "longitude": 150.9168412,
+      "location_precision": "address",
+      "google_rating": 3.7,
+      "google_review_count": 1188,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "current local listing",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Main Street Kebabs Blacktown",
+      "slug": "main-street-kebabs-blacktown",
+      "suburb_slug": "blacktown",
+      "address_line": "58 Main St, Blacktown NSW 2148",
+      "postcode": "2148",
+      "latitude": -33.7718452,
+      "longitude": 150.9114777,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Kebab Express Pizza Pide and Adana",
+      "slug": "kebab-express-pizza-pide-and-adana",
+      "suburb_slug": "blacktown",
+      "address_line": "14/10 Sunnyholt Rd, Blacktown NSW 2148",
+      "postcode": "2148",
+      "latitude": -33.748937,
+      "longitude": 150.9161833,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Nepean Pizza And Kebabs",
+      "slug": "nepean-pizza-and-kebabs",
+      "suburb_slug": "penrith",
+      "address_line": "449 High St, Penrith NSW 2750",
+      "postcode": "2750",
+      "latitude": -33.7533912,
+      "longitude": 150.6971047,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Ali Baba Penrith",
+      "slug": "ali-baba-penrith",
+      "suburb_slug": "penrith",
+      "address_line": "585 High St, Penrith NSW 2750",
+      "postcode": "2750",
+      "latitude": -33.7511072,
+      "longitude": 150.6928014,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "King of Kebabs Penrith",
+      "slug": "king-of-kebabs-penrith",
+      "suburb_slug": "penrith",
+      "address_line": "372 High St, Penrith NSW 2750",
+      "postcode": "2750",
+      "latitude": -33.7539852,
+      "longitude": 150.6986491,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Cylex",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Turkish Kebab Joint",
+      "slug": "turkish-kebab-joint",
+      "suburb_slug": "penrith",
+      "address_line": "Unit 23/121 Coreen Ave, Penrith NSW 2750",
+      "postcode": "2750",
+      "latitude": -33.7511954,
+      "longitude": 150.6941711,
+      "location_precision": "suburb",
+      "google_rating": 4.6,
+      "google_review_count": 157,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Kebab Club",
+      "slug": "kebab-club",
+      "suburb_slug": "smithfield",
+      "address_line": "4/751 Smithfield Rd, Smithfield NSW 2164",
+      "postcode": "2164",
+      "latitude": -33.8510765,
+      "longitude": 150.9439221,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "FindGlocal",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Tommy's Pizzas/Kebabs",
+      "slug": "tommy-s-pizzas-kebabs",
+      "suburb_slug": "smithfield",
+      "address_line": "Shop 3/677 The Horsley Dr, Smithfield NSW 2164",
+      "postcode": "2164",
+      "latitude": -33.8478215,
+      "longitude": 150.9408736,
+      "location_precision": "suburb",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "FindGlocal",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Grillicious Kebabs & Grill",
+      "slug": "grillicious-kebabs-grill",
+      "suburb_slug": "west-hoxton",
+      "address_line": "15 Village Way, Sydney NSW 2173",
+      "postcode": "2173",
+      "latitude": -33.9549482,
+      "longitude": 150.9449651,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "FindGlocal",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Taste of Kebab & Pizza House",
+      "slug": "taste-of-kebab-pizza-house",
+      "suburb_slug": "shalvey",
+      "address_line": "9/483 Luxford Rd, Shalvey NSW 2770",
+      "postcode": "2770",
+      "latitude": -33.7284314,
+      "longitude": 150.8125626,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "FindGlocal",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Kebabs on Kingsway",
+      "slug": "kebabs-on-kingsway",
+      "suburb_slug": "caringbah",
+      "address_line": "2/340 Kingsway, NSW 2229",
+      "postcode": "2229",
+      "latitude": -34.042076,
+      "longitude": 151.1220217,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "FindGlocal",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Watsup Brothers",
+      "slug": "watsup-brothers-condell-park",
+      "suburb_slug": "condell-park",
+      "address_line": "149 Eldridge Rd, Condell Park NSW 2200",
+      "postcode": "2200",
+      "latitude": -33.9319525,
+      "longitude": 151.0188747,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Official Watsup Brothers website",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Watsup Brothers",
+      "slug": "watsup-brothers-denham-court",
+      "suburb_slug": "denham-court",
+      "address_line": "194 Campbelltown Rd, Denham Court NSW 2565",
+      "postcode": "2565",
+      "latitude": -33.9915141,
+      "longitude": 150.8449688,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Official Watsup Brothers website",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Watsup Brothers",
+      "slug": "watsup-brothers-marsden-park",
+      "suburb_slug": "marsden-park",
+      "address_line": "T5 Elara Village Shopping Centre, 98 Elara Bvd, Marsden Park NSW 2765",
+      "postcode": "2765",
+      "latitude": -33.6956552,
+      "longitude": 150.8147975,
+      "location_precision": "suburb",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Official Watsup Brothers website",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Watsup Brothers",
+      "slug": "watsup-brothers-gledswood-hills",
+      "suburb_slug": "gledswood-hills",
+      "address_line": "13/1 Gregory Hills Dr, Gledswood Hills NSW 2557",
+      "postcode": "2557",
+      "latitude": -34.0202364,
+      "longitude": 150.7614074,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Official Watsup Brothers website",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Watsup Brothers",
+      "slug": "watsup-brothers-pennant-hills",
+      "suburb_slug": "pennant-hills",
+      "address_line": "4, Shops 9-10/10 Hillcrest Rd, Pennant Hills NSW 2120",
+      "postcode": "2120",
+      "latitude": -33.7384663,
+      "longitude": 151.0716639,
+      "location_precision": "suburb",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Official Watsup Brothers website",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Sopranos",
+      "slug": "sopranos",
+      "suburb_slug": "rosehill",
+      "address_line": "Rosehill NSW",
+      "postcode": "2000",
+      "latitude": -33.8263889,
+      "longitude": 151.0305556,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_restaurant",
+      "styles": [
+        "kebab"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Sydney community recommendation",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Yeeros Shop",
+      "slug": "yeeros-shop",
+      "suburb_slug": "marrickville",
+      "address_line": "Marrickville Rd, Marrickville NSW",
+      "postcode": "2000",
+      "latitude": -33.9125276,
+      "longitude": 151.1605664,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "Greek_yeeros",
+      "styles": [
+        "kebab",
+        "greek"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Sydney community recommendation",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Gyradiko",
+      "slug": "gyradiko",
+      "suburb_slug": "bexley",
+      "address_line": "307 Forest Rd, Bexley NSW 2207",
+      "postcode": "2207",
+      "latitude": -33.9491076,
+      "longitude": 151.1272414,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "Greek_gyros",
+      "styles": [
+        "kebab",
+        "greek"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Sydney community recommendation",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Mega Gyros",
+      "slug": "mega-gyros",
+      "suburb_slug": "rosebery",
+      "address_line": "Rosebery NSW",
+      "postcode": "2000",
+      "latitude": -33.9185861,
+      "longitude": 151.204692,
+      "location_precision": "address",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "Greek_gyros",
+      "styles": [
+        "kebab",
+        "greek"
+      ],
+      "verification_status": "unverified",
+      "research_status": "candidate",
+      "source": "Sydney community recommendation",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Spanian's Kebabs",
+      "slug": "spanian-s-kebabs",
+      "suburb_slug": "sydney-cbd",
+      "address_line": "Sydney CBD NSW",
+      "postcode": "2000",
+      "latitude": -33.8747234,
+      "longitude": 151.2053644,
+      "location_precision": "suburb",
+      "google_rating": null,
+      "google_review_count": null,
+      "google_place_id": null,
+      "opening_hours": null,
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "unverified",
+      "research_status": "needs_current_verification",
+      "source": "Recent community report; multiple locations reportedly closed",
+      "data_last_verified": null,
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Central Kebab \ud83c\udf2f",
+      "slug": "central-kebab",
+      "suburb_slug": "haymarket",
+      "address_line": "777 George St, Haymarket NSW 2000",
+      "postcode": "2000",
+      "latitude": -33.8833977,
+      "longitude": 151.2033435,
+      "location_precision": "address",
+      "google_rating": 4.6,
+      "google_review_count": 176,
+      "google_place_id": "ChIJDwtTXQCvEmsRLwBK49ZrGcc",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "09:00",
+            "close": "04:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "08:30",
+            "close": "04:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:30",
+            "close": "04:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:30",
+            "close": "04:30"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:30",
+            "close": "04:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:30",
+            "close": "05:30"
+          }
+        ],
+        "sat": [
+          {
+            "open": "09:00",
+            "close": "05:30"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": "2026-08-09",
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Kebab Halal",
+      "slug": "kebab-halal",
+      "suburb_slug": "haymarket",
+      "address_line": "Taragon Central/849 George St, Haymarket NSW 2000",
+      "postcode": "2000",
+      "latitude": -33.8814408,
+      "longitude": 151.2044524,
+      "location_precision": "suburb",
+      "google_rating": 4.5,
+      "google_review_count": 158,
+      "google_place_id": "ChIJwy5l5MuvEmsRJKGAkXoWaQw",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "11:04",
+            "close": "03:30"
+          }
+        ],
+        "mon": [
+          {
+            "open": "11:04",
+            "close": "03:30"
+          }
+        ],
+        "tue": [
+          {
+            "open": "11:04",
+            "close": "03:30"
+          }
+        ],
+        "wed": [
+          {
+            "open": "11:04",
+            "close": "03:30"
+          }
+        ],
+        "thu": [
+          {
+            "open": "11:04",
+            "close": "03:30"
+          }
+        ],
+        "fri": [
+          {
+            "open": "11:04",
+            "close": "03:30"
+          }
+        ],
+        "sat": [
+          {
+            "open": "11:04",
+            "close": "03:30"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": "2026-08-09",
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Sydney Kebabs Bankstown",
+      "slug": "sydney-kebabs-bankstown",
+      "suburb_slug": "bankstown",
+      "address_line": "325 Hume Hwy, Bankstown NSW 2200",
+      "postcode": "2200",
+      "latitude": -33.9071661,
+      "longitude": 151.0338374,
+      "location_precision": "address",
+      "google_rating": 4.3,
+      "google_review_count": 723,
+      "google_place_id": "ChIJHwoK2HK8EmsRs0eIDyE54Wg",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "14:00",
+            "close": "00:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "10:30",
+            "close": "00:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "10:30",
+            "close": "02:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "10:30",
+            "close": "02:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": "2026-08-09",
+      "verification_notes": null,
+      "located": true
+    },
+    {
+      "name": "Brothers Kebabs and Burgers",
+      "slug": "brothers-kebabs-and-burgers",
+      "suburb_slug": "annandale",
+      "address_line": "257 Parramatta Rd, Annandale NSW 2038",
+      "postcode": "2038",
+      "latitude": -33.8877956,
+      "longitude": 151.1686224,
+      "location_precision": "address",
+      "google_rating": 4.5,
+      "google_review_count": 1083,
+      "google_place_id": "ChIJFX5mRi-wEmsRdawaF5BYe5M",
+      "opening_hours": {
+        "sun": [
+          {
+            "open": "11:30",
+            "close": "02:00"
+          }
+        ],
+        "mon": [
+          {
+            "open": "10:00",
+            "close": "02:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "10:00",
+            "close": "02:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "10:00",
+            "close": "02:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "10:00",
+            "close": "02:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "10:00",
+            "close": "04:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "11:00",
+            "close": "04:00"
+          }
+        ]
+      },
+      "category": "kebab_shop",
+      "styles": [
+        "kebab",
+        "doner"
+      ],
+      "verification_status": "verified",
+      "research_status": "candidate_verified",
+      "source": "Google business search",
+      "data_last_verified": "2026-08-09",
+      "verification_notes": null,
+      "located": true
+    }
+  ]
+}

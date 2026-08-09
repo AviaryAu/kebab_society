@@ -10,8 +10,8 @@ use App\Models\KebabStyle;
 use App\Models\Suburb;
 use App\Services\KebabDiscoveryService;
 use App\Services\KebabRankingService;
+use App\Support\RatingTier;
 use App\Support\RestaurantFilters;
-use App\Support\ScoreTier;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -45,7 +45,7 @@ class MapController extends Controller
                     'latitude' => $suburb->latitude,
                     'longitude' => $suburb->longitude,
                 ]),
-            'tiers' => array_map(fn (ScoreTier $tier): array => $tier->toArray(), ScoreTier::all()),
+            'tiers' => array_map(fn (RatingTier $tier): array => $tier->toArray(), RatingTier::allIncludingUnrated()),
             'map' => config('kebab.map'),
             'leaderboards' => $this->ranking->definitions()
                 ->map(fn ($definition): array => $definition->toArray())
