@@ -40,11 +40,11 @@ function query(changes = {}) {
         ...changes,
     };
 
-    router.get('/admin', Object.fromEntries(Object.entries(next).filter(([, v]) => v !== undefined && v !== null)), {
-        preserveState: true,
-        preserveScroll: true,
-        replace: true,
-    });
+    router.get(
+        '/admin/restaurants',
+        Object.fromEntries(Object.entries(next).filter(([, v]) => v !== undefined && v !== null)),
+        { preserveState: true, preserveScroll: true, replace: true },
+    );
 }
 
 function sortBy(column) {

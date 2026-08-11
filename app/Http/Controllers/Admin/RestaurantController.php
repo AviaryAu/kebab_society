@@ -91,7 +91,6 @@ class RestaurantController extends Controller
                 'photos_count' => $restaurant->photos_count,
                 'has_hours' => ! $restaurant->hours()->isEmpty(),
                 'edit_url' => route('admin.restaurants.edit', $restaurant->slug),
-                'public_url' => route('restaurants.show', $restaurant->slug),
                 'updated_at' => $restaurant->updated_at?->diffForHumans(),
             ]),
             'filters' => [
@@ -145,7 +144,6 @@ class RestaurantController extends Controller
                 'opening_hours' => $restaurant->hours()->toArray(),
                 'styles' => $restaurant->kebabStyles->pluck('id'),
                 'photos' => RestaurantPhotoResource::collection($restaurant->photos),
-                'public_url' => route('restaurants.show', $restaurant->slug),
             ],
             'options' => [
                 'suburbs' => Suburb::query()->orderBy('name')->get(['id', 'name', 'region', 'postcode']),

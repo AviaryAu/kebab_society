@@ -179,8 +179,8 @@ function clusterElement(count, best) {
     const element = document.createElement('button');
     element.type = 'button';
     element.className = 'ks-cluster';
-    element.setAttribute('aria-label', `${count} kebab shops. Zoom in.`);
-    element.innerHTML = `<span class="ks-cluster__count">${count}</span><span class="ks-cluster__label">kebabs</span>`;
+    element.setAttribute('aria-label', `${count} live places. Zoom in.`);
+    element.innerHTML = `<span class="ks-cluster__count">${count}</span><span class="ks-cluster__label">live</span>`;
 
     if (best >= 4.5) {
         element.dataset.best = 'legendary';
@@ -390,7 +390,7 @@ defineExpose({ flyTo, fitToRestaurants });
             class="pointer-events-none absolute inset-0 flex items-center justify-center paper"
             aria-live="polite"
         >
-            <p class="label-caps animate-pulse text-ink/50">Locating the kebabs…</p>
+            <p class="label-caps animate-pulse text-ink/50">Mapping Sydney live…</p>
         </div>
     </div>
 </template>
@@ -433,7 +433,7 @@ defineExpose({ flyTo, fitToRestaurants });
 }
 
 .ks-cluster__count {
-    font-family: 'Bitter', Georgia, serif;
+    font-family: 'Newsreader', Georgia, serif;
     font-weight: 900;
     font-size: 15px;
     line-height: 1;

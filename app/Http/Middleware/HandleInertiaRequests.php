@@ -35,13 +35,21 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+        $brand = [
+            'name' => config('kslive.brand.name', config('app.name')),
+            'tagline' => config('kslive.brand.tagline', 'Keep Sydney Live.'),
+            'description' => config(
+                'kslive.brand.description',
+                'Keep Sydney Live is an independent Sydney events and culture platform.'
+            ),
+            'is_late_night' => now()->hour < 5 || now()->hour >= 22,
+        ];
+
         return [
             ...parent::share($request),
-            'society' => [
-                'name' => config('app.name'),
-                'tagline' => "Sydney's unofficial kebab authority.",
-                'is_late_night' => now()->hour < 5 || now()->hour >= 22,
-            ],
+            'brand' => $brand,
+            // Retained so legacy pages do not break while the pivot lands.
+            'society' => $brand,
             'auth' => [
                 'user' => fn () => $request->user() === null ? null : [
                     'name' => $request->user()->name,

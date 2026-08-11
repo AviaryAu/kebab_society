@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="KSLive venue placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f3efe6"/>
+      <stop offset="100%" stop-color="#e8dfd2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="120" y="120" width="1360" height="660" fill="none" stroke="#0b0f14" stroke-width="12"/>
+  <g fill="#0b0f14">
+    <rect x="220" y="300" width="180" height="220"/>
+    <rect x="460" y="260" width="220" height="260"/>
+    <rect x="740" y="220" width="180" height="300"/>
+    <rect x="980" y="280" width="220" height="240"/>
+    <rect x="1260" y="240" width="120" height="280"/>
+  </g>
+  <text x="160" y="700" fill="#0089a8" font-family="Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="4">SYDNEY VENUES</text>
+</svg>

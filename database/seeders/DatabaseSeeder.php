@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             KebabStyleSeeder::class,
             RestaurantSeeder::class,
+            KSLiveSeeder::class,
             AdminUserSeeder::class,
         ]);
     }

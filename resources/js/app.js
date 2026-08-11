@@ -4,7 +4,7 @@ import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Kebab Society';
+const appName = import.meta.env.VITE_APP_NAME || 'Keep Sydney Live';
 
 createInertiaApp({
     title: (title) => (title ? `${title} — ${appName}` : appName),
@@ -19,7 +19,7 @@ createInertiaApp({
     },
 
     progress: {
-        color: '#c1121f',
+        color: '#0089a8',
         showSpinner: false,
     },
 });

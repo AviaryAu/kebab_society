@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Sydney map tile">
+  <rect width="800" height="600" fill="#e8dfd2"/>
+
+  <!-- water -->
+  <path d="M0 120 C 140 90, 210 170, 330 150 C 420 134, 470 60, 560 70 C 660 82, 700 30, 800 40 L800 0 L0 0 Z" fill="#bfd9e0"/>
+  <path d="M330 150 C 360 220, 300 260, 320 320 C 336 372, 300 420, 330 470 L280 470 C 250 420, 286 372, 270 320 C 250 258, 312 220, 282 152 Z" fill="#bfd9e0"/>
+
+  <!-- parks -->
+  <rect x="470" y="180" width="150" height="110" rx="6" fill="#cfdcc4"/>
+  <rect x="90" y="380" width="130" height="90" rx="6" fill="#cfdcc4"/>
+
+  <!-- roads -->
+  <g stroke="#fdfaf3" stroke-width="10" stroke-linecap="round">
+    <path d="M0 230 H800"/>
+    <path d="M0 350 H800"/>
+    <path d="M0 470 H800"/>
+    <path d="M150 90 V600"/>
+    <path d="M400 120 V600"/>
+    <path d="M640 60 V600"/>
+  </g>
+  <g stroke="#fdfaf3" stroke-width="4" opacity="0.9">
+    <path d="M0 290 H800"/>
+    <path d="M0 410 H800"/>
+    <path d="M270 150 V600"/>
+    <path d="M520 160 V600"/>
+    <path d="M720 90 V600"/>
+  </g>
+
+  <!-- blocks -->
+  <g fill="#0b0f14" opacity="0.06">
+    <rect x="170" y="250" width="80" height="80"/>
+    <rect x="300" y="370" width="80" height="70"/>
+    <rect x="560" y="430" width="60" height="60"/>
+    <rect x="660" y="250" width="50" height="70"/>
+  </g>
+</svg>

@@ -6,38 +6,78 @@
 @source '../js';
 
 /*
- * KEBAB SOCIETY DESIGN SYSTEM
+ * KEEP SYDNEY LIVE — DESIGN SYSTEM
  *
- * Editorial food publication meets institutional signage meets a kebab shop
- * that has been there since 1988. Strong type, flat colour, hard edges.
+ * Implements style.md. Strong typography, restrained layout, generous
+ * whitespace, and pastel used sparingly for editorial personality.
+ *
+ * Rules that matter most here:
+ *   - 1px ink borders, 0-4px radius. Never a heavy rounded SaaS card.
+ *   - No drop shadows, no gradients, no glassmorphism.
+ *   - Pastels are roughly 10% of the page. Primary actions stay ink.
  */
 
 @theme {
-    --font-display: 'Bitter', Georgia, serif;
-    --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    /* Canela and Suisse Intl are licensed faces; the fallbacks ship today. */
+    --font-display: 'Canela', 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Suisse Intl', 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-logo: 'Anton', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+    --font-logo-support: 'Oswald', 'Arial Narrow', sans-serif;
 
-    --color-cream: #f5efe1;
-    --color-cream-deep: #ebe1cb;
-    --color-garlic: #fbf7ee;
-    --color-ink: #16130f;
-    --color-char: #14352a;
-    --color-char-soft: #1d4a3a;
-    --color-tomato: #c1121f;
-    --color-tomato-deep: #8e0f18;
-    --color-lettuce: #2f6b3a;
-    --color-meat: #b5793f;
-    --color-gold: #d8a426;
+    /* Core */
+    --color-ink: #171717;
+    --color-paper: #f7f4ee;
+    --color-warm-white: #fcfbf8;
+    --color-charcoal: #3a3a38;
+
+    /* Sydney pastels */
+    --color-powder-blue: #bfd8e5;
+    --color-seafoam: #c8ded5;
+    --color-butter: #f2df9b;
+    --color-shell: #f2c8c3;
+    --color-lilac: #d8cbe5;
+    --color-sky: #c7d7ed;
+    --color-apricot: #e9c4a8;
+    --color-sage: #c7d1bc;
+
+    --radius-sm: 2px;
+    --radius-md: 4px;
+
+    /*
+     * TEMPORARY — the admin screens have not been migrated to the new palette
+     * yet. These aliases keep internal tooling legible and map the old names
+     * onto the Keep Sydney Live system. Delete once admin is restyled.
+     */
+    --color-cream: #f7f4ee;
+    --color-cream-deep: #efeae1;
+    --color-garlic: #fcfbf8;
+    --color-char: #171717;
+    --color-char-soft: #3a3a38;
+    --color-gold: #f2df9b;
+    --color-alert: #b0453a;
 }
 
 @layer base {
+    /*
+     * Declared outside @theme as well: Tailwind drops theme variables that no
+     * utility references, and the logo faces are only used from component CSS.
+     */
+    :root {
+        --font-logo: 'Anton', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+        --font-logo-support: 'Oswald', 'Arial Narrow', sans-serif;
+    }
+
     html {
         -webkit-tap-highlight-color: transparent;
     }
 
     body {
         font-family: var(--font-sans);
-        background-color: var(--color-cream);
+        background-color: var(--color-paper);
         color: var(--color-ink);
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
     }
 
     h1,
@@ -45,91 +85,322 @@
     h3,
     h4 {
         font-family: var(--font-display);
-        font-weight: 900;
-        letter-spacing: -0.015em;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.04;
+    }
+
+    /* The palette is quiet; the focus ring is not. */
+    :focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 2px;
     }
 
     ::selection {
-        background-color: var(--color-tomato);
-        color: var(--color-garlic);
+        background-color: var(--color-butter);
+        color: var(--color-ink);
     }
 }
 
+/* METADATA / LABELS — small, precise, confident. */
 @utility label-caps {
-    font-weight: 700;
+    font-family: var(--font-sans);
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     font-size: 0.6875rem;
     line-height: 1;
 }
 
-/* Hard institutional borders. This is signwriting, not glassmorphism. */
+/* The date/time strap: workhorse of every listings page. */
+@utility label-time {
+    font-family: var(--font-logo-support);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8125rem;
+    line-height: 1;
+}
+
 @utility rule {
-    border: 2px solid var(--color-ink);
+    border: 1px solid var(--color-ink);
 }
 
-@utility rule-thick {
-    border: 3px solid var(--color-ink);
-}
-
-@utility stamped {
-    box-shadow: 4px 4px 0 var(--color-ink);
-}
-
-@utility stamped-sm {
-    box-shadow: 3px 3px 0 var(--color-ink);
-}
-
-/* Subtle paper texture so large cream areas do not read as flat SaaS white. */
-@utility paper {
-    background-color: var(--color-cream);
-    background-image: radial-gradient(circle at 1px 1px, rgba(22, 19, 15, 0.055) 1px, transparent 0);
-    background-size: 14px 14px;
+@utility rule-soft {
+    border: 1px solid rgb(23 23 23 / 0.15);
 }
 
 @layer components {
-    .ks-link-underline {
-        background-image: linear-gradient(var(--color-tomato), var(--color-tomato));
+    /* The editorial container: 1440px, generous gutters. */
+    .ks-container {
+        margin-inline: auto;
+        width: 100%;
+        max-width: 1440px;
+        padding-inline: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .ks-container {
+            padding-inline: 2rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .ks-container {
+            padding-inline: 3rem;
+        }
+    }
+
+    /* Primary action. Ink, always. */
+    .ks-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        border: 1px solid var(--color-ink);
+        background: var(--color-ink);
+        color: var(--color-warm-white);
+        padding: 0.875rem 1.5rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        transition:
+            background-color 200ms ease,
+            color 200ms ease;
+    }
+
+    .ks-button:hover {
+        background: transparent;
+        color: var(--color-ink);
+    }
+
+    .ks-button--ghost {
+        background: transparent;
+        color: var(--color-ink);
+    }
+
+    .ks-button--ghost:hover {
+        background: var(--color-ink);
+        color: var(--color-warm-white);
+    }
+
+    /* Links retract a hairline rather than shouting in colour. */
+    .ks-link {
+        display: inline-block;
+        background-image: linear-gradient(currentColor, currentColor);
         background-repeat: no-repeat;
         background-position: 0 100%;
-        background-size: 0% 2px;
-        transition: background-size 220ms ease;
+        background-size: 100% 1px;
+        transition: background-size 250ms ease;
     }
 
-    .ks-link-underline:hover {
-        background-size: 100% 2px;
+    .ks-link:hover {
+        background-size: 0% 1px;
     }
 
-    /* MapLibre chrome, restyled to match the Society's signage. */
+    /* Images settle rather than pop. */
+    .ks-media {
+        overflow: hidden;
+        background: var(--color-warm-white);
+    }
+
+    .ks-media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .ks-anim:hover .ks-media img,
+    a:hover .ks-media img {
+        transform: scale(1.03);
+    }
+
+    /* MapLibre chrome, quietened to match the paper system. */
     .maplibregl-ctrl-group {
-        border: 2px solid var(--color-ink) !important;
+        border: 1px solid var(--color-ink) !important;
         border-radius: 0 !important;
-        box-shadow: 3px 3px 0 var(--color-ink) !important;
-        background: var(--color-garlic) !important;
+        box-shadow: none !important;
+        background: var(--color-warm-white) !important;
     }
 
     .maplibregl-ctrl-group button + button {
-        border-top: 2px solid var(--color-ink) !important;
+        border-top: 1px solid rgb(23 23 23 / 0.15) !important;
     }
 
     .maplibregl-ctrl-attrib {
         font-size: 10px;
-        background: rgba(251, 247, 238, 0.9) !important;
+        background: rgb(252 251 248 / 0.9) !important;
     }
 
     .maplibregl-ctrl-attrib a {
-        color: var(--color-char);
+        color: var(--color-charcoal);
+    }
+
+    /*
+     * ADMIN + EDITORIAL BODY
+     *
+     * The admin borrows the public system: paper, ink hairlines, no shadows.
+     */
+    .ks-field {
+        display: block;
+        width: 100%;
+        margin-top: 0.375rem;
+        border: 1px solid var(--color-ink);
+        background: var(--color-warm-white);
+        color: var(--color-ink);
+        padding: 0.625rem 0.75rem;
+        font-family: var(--font-sans);
+        font-size: 0.9375rem;
+        line-height: 1.4;
+        border-radius: 0;
+    }
+
+    .ks-field:focus {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 1px;
+    }
+
+    .ks-field[disabled] {
+        background: var(--color-cream-deep);
+        color: var(--color-charcoal);
+    }
+
+    select.ks-field {
+        appearance: none;
+        background-image: linear-gradient(45deg, transparent 50%, var(--color-ink) 50%),
+            linear-gradient(135deg, var(--color-ink) 50%, transparent 50%);
+        background-position:
+            calc(100% - 18px) calc(50% + 2px),
+            calc(100% - 13px) calc(50% + 2px);
+        background-size: 5px 5px;
+        background-repeat: no-repeat;
+        padding-right: 2.25rem;
+    }
+
+    .ks-error {
+        display: block;
+        margin-top: 0.375rem;
+        color: var(--color-alert);
+        font-size: 0.8125rem;
+    }
+
+    .ks-panel {
+        border: 1px solid var(--color-ink);
+        background: var(--color-warm-white);
+    }
+
+    /* Rendered editor output, on the public site and in the editor itself. */
+    .ks-prose {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: var(--color-charcoal);
+    }
+
+    .ks-prose > * + * {
+        margin-top: 1.25rem;
+    }
+
+    .ks-prose h2 {
+        font-size: 2rem;
+        color: var(--color-ink);
+        margin-top: 2.5rem;
+    }
+
+    .ks-prose h3 {
+        font-size: 1.5rem;
+        color: var(--color-ink);
+        margin-top: 2rem;
+    }
+
+    .ks-prose h4 {
+        font-size: 1.25rem;
+        color: var(--color-ink);
+        margin-top: 1.75rem;
+    }
+
+    .ks-prose a {
+        color: var(--color-ink);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .ks-prose strong {
+        color: var(--color-ink);
+    }
+
+    .ks-prose ul,
+    .ks-prose ol {
+        padding-left: 1.25rem;
+    }
+
+    .ks-prose ul {
+        list-style: disc;
+    }
+
+    .ks-prose ol {
+        list-style: decimal;
+    }
+
+    .ks-prose li + li {
+        margin-top: 0.5rem;
+    }
+
+    .ks-prose blockquote {
+        border-left: 2px solid var(--color-ink);
+        padding-left: 1.25rem;
+        font-family: var(--font-display);
+        font-size: 1.375rem;
+        color: var(--color-ink);
+    }
+
+    .ks-prose hr {
+        border: 0;
+        border-top: 1px solid var(--color-ink);
+    }
+
+    .ks-prose img {
+        width: 100%;
+        border: 1px solid var(--color-ink);
+    }
+
+    .ks-prose figcaption {
+        margin-top: 0.5rem;
+        font-size: 0.8125rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    .ks-prose pre {
+        background: var(--color-cream-deep);
+        padding: 1rem;
+        overflow-x: auto;
+        font-size: 0.875rem;
+    }
+
+    /* TipTap editing surface. */
+    .ks-editor .ProseMirror {
+        min-height: 18rem;
+        padding: 1.25rem;
+        outline: none;
+        font-size: 1rem;
+    }
+
+    .ks-editor .ProseMirror p.is-editor-empty:first-child::before {
+        content: attr(data-placeholder);
+        float: left;
+        height: 0;
+        pointer-events: none;
+        color: rgb(23 23 23 / 0.35);
     }
 }
 
 /*
- * ANIMATED ICON SET
+ * ICON MOTION
  *
- * Icons animate on hover, in the spirit of animate-ui's icon set but built as
- * plain SVG + CSS so the Vue app carries no extra dependency.
- *
- * Usage: put `ks-anim` on the interactive element (button, link, card) and give
- * the moving part of the SVG one of the `ks-i-*` classes below.
+ * Deliberately small: a nudge or a fade, never a bounce. Put `ks-anim` on the
+ * interactive element and `ks-i-*` on the moving part of the SVG.
  */
 .ks-icon {
     display: block;
@@ -139,194 +410,38 @@
 .ks-icon [class*='ks-i-'] {
     transform-box: fill-box;
     transform-origin: center;
-}
-
-.ks-anim:hover .ks-i-spin,
-.ks-anim:focus-visible .ks-i-spin {
-    animation: ks-spin 700ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.ks-anim:hover .ks-i-jump,
-.ks-anim:focus-visible .ks-i-jump {
-    animation: ks-jump 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .ks-anim:hover .ks-i-nudge,
 .ks-anim:focus-visible .ks-i-nudge {
-    animation: ks-nudge 600ms ease-in-out;
-}
-
-.ks-anim:hover .ks-i-wobble,
-.ks-anim:focus-visible .ks-i-wobble {
-    animation: ks-wobble 700ms ease-in-out;
-}
-
-.ks-anim:hover .ks-i-flicker,
-.ks-anim:focus-visible .ks-i-flicker {
-    animation: ks-flicker 900ms ease-in-out infinite;
-}
-
-.ks-anim:hover .ks-i-pop,
-.ks-anim:focus-visible .ks-i-pop {
-    animation: ks-pop 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.ks-anim:hover .ks-i-tick,
-.ks-anim:focus-visible .ks-i-tick {
-    animation: ks-tick 1600ms steps(8) infinite;
-    transform-origin: center bottom;
-}
-
-.ks-anim:hover .ks-i-draw,
-.ks-anim:focus-visible .ks-i-draw {
-    animation: ks-draw 900ms ease-in-out;
+    transform: translateX(15%);
 }
 
 .ks-anim:hover .ks-i-rise,
 .ks-anim:focus-visible .ks-i-rise {
-    animation: ks-rise 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateY(-12%);
 }
 
-.ks-anim:hover .ks-i-sweep,
-.ks-anim:focus-visible .ks-i-sweep {
-    animation: ks-sweep 800ms ease-in-out;
+.ks-anim:hover .ks-i-spin,
+.ks-anim:focus-visible .ks-i-spin {
+    transform: rotate(90deg);
 }
 
-@keyframes ks-spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes ks-jump {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-22%);
-    }
-    70% {
-        transform: translateY(4%);
-    }
-}
-
-@keyframes ks-nudge {
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-    45% {
-        transform: translateX(22%);
-    }
-}
-
-@keyframes ks-wobble {
-    0%,
-    100% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(-12deg);
-    }
-    55% {
-        transform: rotate(10deg);
-    }
-    80% {
-        transform: rotate(-4deg);
-    }
-}
-
-@keyframes ks-flicker {
-    0%,
-    100% {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-    }
-    35% {
-        transform: scale(1.12) translateY(-6%);
-        opacity: 0.85;
-    }
-    65% {
-        transform: scale(0.94) translateY(2%);
-        opacity: 1;
-    }
-}
-
-@keyframes ks-pop {
-    0%,
-    100% {
-        transform: scale(1);
-    }
-    45% {
-        transform: scale(1.28) rotate(8deg);
-    }
-}
-
-@keyframes ks-tick {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes ks-draw {
-    0% {
-        stroke-dashoffset: var(--ks-dash, 48);
-    }
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes ks-rise {
-    0%,
-    100% {
-        transform: translateY(0) scale(1);
-    }
-    50% {
-        transform: translateY(-16%) scale(1.08);
-    }
-}
-
-@keyframes ks-sweep {
-    0% {
-        transform: translateX(-14%);
-        opacity: 0.2;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(14%);
-        opacity: 0.2;
-    }
-}
-
-/* The Society's stamp lands rather than fades. */
-@keyframes ks-stamp-in {
-    0% {
-        transform: rotate(-18deg) scale(1.9);
+/* Editorial reveal, used sparingly on listing rows. */
+@keyframes ks-reveal {
+    from {
         opacity: 0;
+        transform: translateY(8px);
     }
-    60% {
-        transform: rotate(-9deg) scale(0.96);
+    to {
         opacity: 1;
-    }
-    100% {
-        transform: rotate(-9deg) scale(1);
-        opacity: 1;
+        transform: none;
     }
 }
 
-@keyframes ks-marker-in {
-    0% {
-        transform: translateY(-40%) scale(0.6);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
+.ks-reveal {
+    animation: ks-reveal 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

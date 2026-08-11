@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="KSLive">
+  <rect width="64" height="64" fill="#171717"/>
+  <text
+    x="32"
+    y="45"
+    fill="#FCFBF8"
+    font-family="Anton, 'Arial Narrow', 'Helvetica Neue', sans-serif"
+    font-size="40"
+    font-weight="400"
+    letter-spacing="-1"
+    text-anchor="middle"
+  >KS</text>
+</svg>

@@ -58,14 +58,14 @@ class SessionController extends Controller
         RateLimiter::clear($this->throttleKey($request));
         $request->session()->regenerate();
 
-        return redirect()->intended(route('admin.restaurants.index'));
+        return redirect()->intended(route('admin.dashboard'));
     }
 
     public function destroy(Request $request): RedirectResponse
     {
         $this->forget($request);
 
-        return redirect()->route('map');
+        return redirect()->route('home');
     }
 
     private function forget(Request $request): void

@@ -116,19 +116,10 @@ function removePhoto(photo) {
 
     <AdminLayout :title="restaurant.name">
         <div class="mb-4 flex flex-wrap items-center gap-3">
-            <Link href="/admin" class="ks-anim label-caps inline-flex items-center gap-1.5 text-ink/55">
+            <Link href="/admin/restaurants" class="ks-anim label-caps inline-flex items-center gap-1.5 text-ink/55">
                 <ArrowRightIcon :size="14" :stroke-width="2.4" class="rotate-180" />
                 Back to the register
             </Link>
-            <a
-                :href="restaurant.public_url"
-                target="_blank"
-                rel="noopener"
-                class="ks-anim label-caps ml-auto inline-flex items-center gap-1.5 text-tomato"
-            >
-                View public page
-                <ArrowRightIcon :size="14" :stroke-width="2.4" />
-            </a>
         </div>
 
         <div class="grid gap-5 xl:grid-cols-[1fr_380px]">

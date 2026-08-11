@@ -1,6 +1,6 @@
 <script setup>
 import { Head, useForm } from '@inertiajs/vue3';
-import SocietyLogo from '../../Components/SocietyLogo.vue';
+import KsLogo from '../../Components/KsLogo.vue';
 import ArrowRightIcon from '../../Components/Icons/ArrowRightIcon.vue';
 
 const form = useForm({
@@ -18,14 +18,14 @@ function submit() {
 
 <template>
     <Head>
-        <title>Society Administration</title>
+        <title>Administration</title>
         <meta name="robots" content="noindex, nofollow" />
     </Head>
 
-    <div class="flex min-h-dvh items-center justify-center paper px-4 py-10">
+    <div class="flex min-h-dvh items-center justify-center bg-paper px-4 py-10">
         <div class="w-full max-w-sm">
-            <div class="mx-auto mb-6 h-28">
-                <SocietyLogo variant="seal" />
+            <div class="mb-8 flex justify-center">
+                <KsLogo variant="stacked" class="text-[3.5rem]" />
             </div>
 
             <form class="border-2 border-ink bg-garlic p-6 stamped" @submit.prevent="submit">

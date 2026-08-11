@@ -1,16 +1,26 @@
 <script setup>
 import { computed } from 'vue';
 import { Link, router, usePage } from '@inertiajs/vue3';
-import SocietyLogo from '../Components/SocietyLogo.vue';
+import KsLogo from '../Components/KsLogo.vue';
 import ArrowRightIcon from '../Components/Icons/ArrowRightIcon.vue';
 
 defineProps({
-    title: { type: String, default: 'The Register' },
+    title: { type: String, default: 'Keep Sydney Live' },
 });
 
 const page = usePage();
 const flash = computed(() => page.props.flash?.message ?? null);
 const user = computed(() => page.props.auth?.user ?? null);
+
+const NAV = [
+    { label: 'Overview', href: '/admin', match: /^\/admin\/?$/ },
+    { label: 'Events', href: '/admin/events', match: /^\/admin\/events/ },
+    { label: 'Venues', href: '/admin/venues', match: /^\/admin\/venues/ },
+    { label: 'Pages', href: '/admin/pages', match: /^\/admin\/pages/ },
+    { label: 'Register', href: '/admin/restaurants', match: /^\/admin\/(restaurants|photos)/ },
+];
+
+const currentPath = computed(() => page.url.split('?')[0]);
 
 function logout() {
     router.post('/admin/logout');
@@ -21,12 +31,12 @@ function logout() {
     <div class="min-h-dvh bg-cream">
         <header class="border-b-2 border-ink bg-char text-garlic">
             <div class="mx-auto flex max-w-[1600px] items-center gap-4 px-4 py-2.5 sm:px-6">
-                <Link href="/admin" class="ks-anim h-9 shrink-0" aria-label="Society admin">
-                    <SocietyLogo variant="icon" />
+                <Link href="/admin" class="ks-anim shrink-0" aria-label="Keep Sydney Live admin">
+                    <KsLogo variant="monogram" shape="square" class="text-[20px]" />
                 </Link>
 
                 <div class="min-w-0">
-                    <p class="label-caps text-gold">Society administration</p>
+                    <p class="label-caps text-gold">Administration</p>
                     <h1 class="truncate text-base leading-tight text-garlic">{{ title }}</h1>
                 </div>
 
@@ -49,6 +59,24 @@ function logout() {
                 </div>
             </div>
         </header>
+
+        <nav class="border-b-2 border-ink bg-cream-deep">
+            <div class="mx-auto flex max-w-[1600px] items-center gap-1 overflow-x-auto px-4 sm:px-6">
+                <Link
+                    v-for="item in NAV"
+                    :key="item.href"
+                    :href="item.href"
+                    class="ks-anim label-caps shrink-0 border-b-2 px-3 py-3 transition-colors"
+                    :class="
+                        item.match.test(currentPath)
+                            ? 'border-ink text-ink'
+                            : 'border-transparent text-ink/50 hover:text-ink'
+                    "
+                >
+                    {{ item.label }}
+                </Link>
+            </div>
+        </nav>
 
         <Transition
             enter-active-class="transition duration-200 ease-out"
