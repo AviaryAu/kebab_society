@@ -123,7 +123,9 @@ class EventImporterTest extends TestCase
 
         $result = $this->import($source, $this->draft());
 
-        $this->assertSame('skipped', $result);
+        // "staged", not "skipped": a run that queued a dozen events for review
+        // has done real work, and the run log should say so.
+        $this->assertSame('staged', $result);
         $this->assertSame(0, Event::query()->count());
 
         $import = EventImport::query()->firstOrFail();

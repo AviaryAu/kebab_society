@@ -34,7 +34,7 @@ class EventImporter
     ) {}
 
     /**
-     * @return string One of: created, updated, skipped.
+     * @return string One of: created, updated, staged, skipped.
      */
     public function import(IngestSource $source, EventDraft $draft, IngestRun $run): string
     {
@@ -67,7 +67,10 @@ class EventImporter
                 'status' => ImportStatus::Pending,
             ])->save();
 
-            return $existing === null ? 'skipped' : 'updated';
+            // Waiting for a reviewer is an outcome in its own right. Reporting
+            // it as "skipped" made a run that had queued a dozen events look
+            // like a run that had done nothing at all.
+            return 'staged';
         }
 
         $event = $existing === null

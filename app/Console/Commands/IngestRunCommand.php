@@ -84,6 +84,7 @@ class IngestRunCommand extends Command
         $this->components->twoColumnDetail('  Seen', (string) $run->items_seen);
         $this->components->twoColumnDetail('  Created', (string) $run->items_created);
         $this->components->twoColumnDetail('  Updated', (string) $run->items_updated);
+        $this->components->twoColumnDetail('  Awaiting review', (string) $run->items_staged);
         $this->components->twoColumnDetail('  Skipped', (string) $run->items_skipped);
         $this->components->twoColumnDetail('  Failed', (string) $run->items_failed);
         $this->components->twoColumnDetail('  Requests', (string) $run->requests_made);

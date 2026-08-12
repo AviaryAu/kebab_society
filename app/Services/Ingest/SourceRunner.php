@@ -24,7 +24,7 @@ class SourceRunner
 
     /**
      * @param  Closure(EventDraft, IngestRun): string  $handler
-     *                                                           Returns one of: created, updated, skipped.
+     *                                                           Returns one of: created, updated, staged, skipped.
      */
     public function run(
         IngestSource $source,
@@ -77,6 +77,7 @@ class SourceRunner
                     match ($handler($draft, $run)) {
                         'created' => $run->items_created++,
                         'updated' => $run->items_updated++,
+                        'staged' => $run->items_staged++,
                         default => $run->items_skipped++,
                     };
                 } catch (Throwable $e) {
@@ -121,10 +122,11 @@ class SourceRunner
             'last_success_at' => Carbon::now(),
             'last_status' => $run->status,
             'last_message' => sprintf(
-                '%d seen, %d new, %d updated, %d skipped, %d failed',
+                '%d seen, %d new, %d updated, %d staged, %d skipped, %d failed',
                 $run->items_seen,
                 $run->items_created,
                 $run->items_updated,
+                $run->items_staged,
                 $run->items_skipped,
                 $run->items_failed,
             ),

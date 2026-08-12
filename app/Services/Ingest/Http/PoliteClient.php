@@ -45,7 +45,15 @@ class PoliteClient
         $this->waitForTurn($url);
 
         try {
-            $response = $this->request($headers)->get($url, $query);
+            // Passing an empty array as the query REPLACES any query string
+            // already on the URL, which silently turned paginated sitemap URLs
+            // like ?page=1 back into page one of the index. Only send a query
+            // when there is one.
+            $request = $this->request($headers);
+
+            $response = $query === []
+                ? $request->get($url)
+                : $request->get($url, $query);
         } catch (ConnectionException $e) {
             Log::warning('Ingest: connection failed', ['url' => $url, 'error' => $e->getMessage()]);
 
@@ -102,6 +110,15 @@ class PoliteClient
      */
     public function mayFetch(string $url): bool
     {
+        // A sitemap the site itself advertises is meant to be read: that is the
+        // entire purpose of the directive. Several publishers — Sydney Opera
+        // House among them — disallow everything, allow a named list of
+        // sections, then point at a sitemap sitting outside that list. We take
+        // the invitation over the oversight.
+        if ($this->isDeclaredSitemap($url)) {
+            return true;
+        }
+
         $robots = $this->robotsFor($url);
 
         if ($robots === null) {
@@ -109,6 +126,36 @@ class PoliteClient
         }
 
         return $robots->allows($url, $this->userAgent());
+    }
+
+    /**
+     * Sitemap URLs a host publishes in its own robots.txt.
+     *
+     * @return array<int, string>
+     */
+    public function declaredSitemaps(string $url): array
+    {
+        preg_match_all(
+            '/^[ \t]*sitemap[ \t]*:[ \t]*(\S+)[ \t]*$/im',
+            $this->robotsText($url),
+            $matches,
+        );
+
+        return array_map(trim(...), $matches[1] ?? []);
+    }
+
+    private function isDeclaredSitemap(string $url): bool
+    {
+        $normalise = static fn (string $u): string => rtrim((string) strtok($u, '?'), '/');
+        $target = $normalise($url);
+
+        foreach ($this->declaredSitemaps($url) as $sitemap) {
+            if ($normalise($sitemap) === $target) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public function requestCount(): int
@@ -146,15 +193,28 @@ class PoliteClient
      */
     private function robotsFor(string $url): ?RobotsTxt
     {
+        $contents = $this->robotsText($url);
+
+        return $contents === '' ? null : RobotsTxt::create($contents);
+    }
+
+    /**
+     * The raw robots.txt for a host, cached.
+     *
+     * Kept as text as well as a parsed object because the Sitemap directives
+     * are not part of the exclusion rules and the parser does not surface them.
+     */
+    private function robotsText(string $url): string
+    {
         $host = $this->hostKey($url);
 
         if ($host === null) {
-            return null;
+            return '';
         }
 
         $minutes = (int) config('ingest.http.robots_cache_minutes', 1440);
 
-        $contents = $this->cache()->remember(
+        return (string) $this->cache()->remember(
             "ingest:robots:{$host}",
             now()->addMinutes($minutes),
             function () use ($url): string {
@@ -170,8 +230,6 @@ class PoliteClient
                 return $response->successful() ? $response->body() : '';
             },
         );
-
-        return $contents === '' ? null : RobotsTxt::create($contents);
     }
 
     /**

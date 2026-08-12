@@ -61,7 +61,8 @@ class IngestSourceSeeder extends Seeder
                 'is_enabled' => true,
                 'licence' => 'City of Sydney open data',
                 'terms_url' => 'https://www.cityofsydney.nsw.gov.au/copyright',
-                'notes' => 'Council listings: markets, community, free events, exhibitions.',
+                'notes' => 'Council listings: markets, community, free events, exhibitions. '
+                    .'Tested 2026-08: ~11 usable events per 12 pages crawled.',
             ],
 
             /*
@@ -83,15 +84,22 @@ class IngestSourceSeeder extends Seeder
                 'frequency_minutes' => 1440,
                 'is_enabled' => true,
                 'licence' => 'Destination NSW',
-                'notes' => 'Seasonal. Mostly archive outside May–June.',
+                'notes' => 'Seasonal. Tested 2026-08: sitemap is almost entirely past '
+                    .'festivals, so expect nothing outside May–June and a flood during it.',
             ],
 
             /*
-             * robots.txt disallows everything, then allows a named list of
-             * sections. Those allowed sections are exactly where the events
-             * live, so the path allowlist below mirrors their file rather than
-             * guessing. Verified with our own parser: /whats-on allowed,
-             * /corporate denied.
+             * Disabled after testing 2026-08.
+             *
+             * robots.txt is fine and the sitemap reads correctly, but the
+             * structured data does not carry dates: their Event nodes contain
+             * only @type, name, url, eventStatus and location, with
+             * performance times loaded client-side afterwards. The handful of
+             * entries that do have a startDate are stale archive pages.
+             *
+             * Worth revisiting with a dedicated adapter against whatever
+             * endpoint their front end calls for performances. JSON-LD alone
+             * cannot reach it.
              */
             [
                 'name' => 'Sydney Opera House',
@@ -110,9 +118,11 @@ class IngestSourceSeeder extends Seeder
                 'options' => ['max_pages' => 200],
                 'default_category_slug' => 'theatre',
                 'frequency_minutes' => 720,
-                'is_enabled' => true,
+                'is_enabled' => false,
                 'licence' => 'Sydney Opera House Trust',
-                'notes' => 'Path allowlist mirrors their robots.txt allow list exactly.',
+                'notes' => 'DISABLED: Event JSON-LD carries no dates (loaded client-side); '
+                    .'dated pages are stale archives. Needs a bespoke adapter. '
+                    .'Path allowlist mirrors their robots.txt allow list exactly.',
             ],
 
             [
@@ -129,7 +139,8 @@ class IngestSourceSeeder extends Seeder
                 'frequency_minutes' => 1440,
                 'is_enabled' => true,
                 'licence' => 'MCA Australia',
-                'notes' => 'Exhibitions and public programs.',
+                'notes' => 'Exhibitions and public programs. Tested 2026-08: works, but the '
+                    .'sitemap paths hold many non-event pages, so a crawl is request-heavy.',
             ],
 
             /*

@@ -144,6 +144,68 @@ class PoliteClientTest extends TestCase
     }
 
     #[Test]
+    public function it_preserves_a_query_string_already_on_the_url(): void
+    {
+        Http::fake([
+            'example.test/robots.txt' => Http::response(''),
+            '*' => Http::response('ok'),
+        ]);
+
+        // Regression: an empty query array used to replace the URL's own query,
+        // which turned paginated sitemap URLs back into page one of the index.
+        $this->client->get('https://example.test/sitemap.xml?page=2');
+
+        Http::assertSent(
+            fn ($request): bool => str_contains($request->url(), 'sitemap.xml?page=2'),
+        );
+    }
+
+    #[Test]
+    public function an_explicit_query_is_merged_onto_the_url(): void
+    {
+        Http::fake([
+            'example.test/robots.txt' => Http::response(''),
+            '*' => Http::response('ok'),
+        ]);
+
+        $this->client->get('https://example.test/events', ['size' => 50]);
+
+        Http::assertSent(fn ($request): bool => str_contains($request->url(), 'size=50'));
+    }
+
+    #[Test]
+    public function it_reads_a_sitemap_a_site_advertises_even_where_the_path_is_disallowed(): void
+    {
+        // Sydney Opera House does exactly this: disallow everything, allow a
+        // named list of sections, then point at a sitemap outside that list.
+        Http::fake([
+            'example.test/robots.txt' => Http::response(
+                "User-agent: *\nDisallow: /\nAllow: /whats-on\nSitemap: https://example.test/sitemap.xml",
+            ),
+            '*' => Http::response('<urlset/>'),
+        ]);
+
+        $this->assertTrue($this->client->mayFetch('https://example.test/sitemap.xml'));
+        $this->assertTrue($this->client->mayFetch('https://example.test/whats-on/gig'));
+        $this->assertFalse($this->client->mayFetch('https://example.test/corporate/hire'));
+    }
+
+    #[Test]
+    public function it_lists_the_sitemaps_a_host_declares(): void
+    {
+        Http::fake([
+            'example.test/robots.txt' => Http::response(
+                "User-agent: *\nAllow: /\nSitemap: https://example.test/a.xml\nSitemap: https://example.test/b.xml",
+            ),
+        ]);
+
+        $this->assertSame(
+            ['https://example.test/a.xml', 'https://example.test/b.xml'],
+            $this->client->declaredSitemaps('https://example.test/anything'),
+        );
+    }
+
+    #[Test]
     public function it_rejects_a_source_url_pointing_at_internal_infrastructure(): void
     {
         $this->expectException(RuntimeException::class);
