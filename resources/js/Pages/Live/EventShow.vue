@@ -52,8 +52,14 @@ const eventSchema = computed(() => ({
         <article>
             <!-- Full-bleed image, then the headline. Magazine order. -->
             <section class="border-b border-ink">
-                <div v-if="event.image" class="ks-media aspect-[16/9] max-h-[70vh] w-full border-b border-ink">
+                <div
+                    v-if="event.image"
+                    class="ks-media relative aspect-[16/9] max-h-[70vh] w-full border-b border-ink"
+                >
                     <img :src="event.image" :alt="event.title" />
+                    <p v-if="event.image_credit" class="label-caps absolute bottom-0 right-0 bg-ink/70 px-2 py-1 text-garlic">
+                        {{ event.image_credit }}
+                    </p>
                 </div>
 
                 <div class="ks-container grid gap-10 py-12 lg:grid-cols-[1.25fr_0.75fr] lg:gap-20 lg:py-16">
@@ -99,6 +105,20 @@ const eventSchema = computed(() => ({
                                 The venue
                             </Link>
                         </div>
+
+                        <!--
+                            Attribution for events we heard about elsewhere. The
+                            facts are theirs; the words above are ours.
+                        -->
+                        <p v-if="event.attribution" class="mt-8 border-t border-ink/15 pt-4 text-sm text-charcoal">
+                            Details via
+                            <a
+                                :href="event.attribution.url"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="ks-link"
+                            >{{ event.attribution.name }}</a>
+                        </p>
                     </aside>
                 </div>
             </section>

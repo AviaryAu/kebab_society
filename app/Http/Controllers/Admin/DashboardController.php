@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\ImportStatus;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use App\Models\EventImport;
+use App\Models\IngestSource;
 use App\Models\Page;
 use App\Models\Restaurant;
 use App\Models\Venue;
@@ -39,6 +42,12 @@ class DashboardController extends Controller
                 'restaurants' => [
                     'total' => Restaurant::query()->count(),
                 ],
+                'ingest' => [
+                    'sources' => IngestSource::query()->where('is_enabled', true)->count(),
+                    'pending' => EventImport::query()->where('status', ImportStatus::Pending)->count(),
+                    'imported' => Event::query()->whereNotNull('ingest_source_id')->count(),
+                    'failing' => IngestSource::query()->where('consecutive_failures', '>=', 3)->count(),
+                ],
             ],
             'upcoming' => Event::query()
                 ->with('venue:id,name')
@@ -63,6 +72,8 @@ class DashboardController extends Controller
                     ->count(),
                 'events_without_venue' => Event::query()->whereNull('venue_id')->count(),
                 'draft_pages' => Page::query()->where('status', 'draft')->count(),
+                'pending_imports' => EventImport::query()->where('status', ImportStatus::Pending)->count(),
+                'failing_sources' => IngestSource::query()->where('consecutive_failures', '>=', 3)->count(),
             ],
         ]);
     }

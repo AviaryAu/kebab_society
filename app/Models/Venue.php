@@ -8,6 +8,7 @@ use Database\Factories\VenueFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
@@ -38,6 +39,12 @@ class Venue extends Model
         'featured',
         'meta_title',
         'meta_description',
+        'ingest_source_id',
+        'external_id',
+        'source_url',
+        'google_place_id',
+        'last_synced_at',
+        'import_locked',
     ];
 
     protected function casts(): array
@@ -46,6 +53,8 @@ class Venue extends Model
             'latitude' => 'float',
             'longitude' => 'float',
             'featured' => 'boolean',
+            'import_locked' => 'boolean',
+            'last_synced_at' => 'immutable_datetime',
         ];
     }
 
@@ -60,6 +69,24 @@ class Venue extends Model
     public function events(): HasMany
     {
         return $this->hasMany(Event::class);
+    }
+
+    /**
+     * @return BelongsTo<IngestSource, $this>
+     */
+    public function ingestSource(): BelongsTo
+    {
+        return $this->belongsTo(IngestSource::class, 'ingest_source_id');
+    }
+
+    /**
+     * Rows an importer may rewrite; see Event::scopeSyncable().
+     *
+     * @param  Builder<Venue>  $query
+     */
+    public function scopeSyncable(Builder $query): void
+    {
+        $query->where('import_locked', false);
     }
 
     /**

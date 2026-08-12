@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             KebabStyleSeeder::class,
             RestaurantSeeder::class,
             KSLiveSeeder::class,
+            IngestSourceSeeder::class,
             AdminUserSeeder::class,
         ]);
     }

@@ -5,7 +5,7 @@
  * Search, filter chips, sortable headers and pagination behave identically on
  * every resource; only the columns and cells differ, so those come in as slots.
  */
-import { ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { Link, router } from '@inertiajs/vue3';
 import SearchIcon from '../Icons/SearchIcon.vue';
 import ChevronDownIcon from '../Icons/ChevronDownIcon.vue';
@@ -22,6 +22,12 @@ const props = defineProps({
 });
 
 const SEARCH_DEBOUNCE_MS = 300;
+
+/*
+ * Not every resource has an edit screen — the import queue is acted on in
+ * place — so the trailing Edit column appears only where rows offer one.
+ */
+const hasEditLinks = computed(() => props.paginator.data.some((item) => item.edit_url));
 
 const search = ref(props.filters.search ?? '');
 let timer = null;
@@ -112,7 +118,7 @@ watch(search, () => {
                         </button>
                         <span v-else class="label-caps">{{ column.label }}</span>
                     </th>
-                    <th class="px-3 py-2.5"><span class="sr-only">Edit</span></th>
+                    <th v-if="hasEditLinks" class="px-3 py-2.5"><span class="sr-only">Edit</span></th>
                 </tr>
             </thead>
 
@@ -124,8 +130,9 @@ watch(search, () => {
                 >
                     <slot name="row" :item="item" />
 
-                    <td class="px-3 py-2.5 text-right">
+                    <td v-if="hasEditLinks" class="px-3 py-2.5 text-right">
                         <Link
+                            v-if="item.edit_url"
                             :href="item.edit_url"
                             class="ks-anim inline-block border-2 border-ink bg-cream px-2.5 py-1.5 transition-colors hover:bg-ink hover:text-garlic"
                         >
@@ -135,7 +142,7 @@ watch(search, () => {
                 </tr>
 
                 <tr v-if="!paginator.data.length">
-                    <td :colspan="columns.length + 1" class="px-3 py-10 text-center text-ink/55">
+                    <td :colspan="columns.length + (hasEditLinks ? 1 : 0)" class="px-3 py-10 text-center text-ink/55">
                         {{ emptyMessage }}
                     </td>
                 </tr>

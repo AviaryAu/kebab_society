@@ -99,14 +99,8 @@ def build_logos() -> None:
         variant = scale_to_height(trim(sheet.crop((left, top, right, bottom))), height)
         save(variant, OUT / "brand" / f"{name}.png")
 
-    icon = Image.open(OUT / "brand" / "logo-icon.png").convert("RGBA")
-    square = Image.new("RGBA", (max(icon.size),) * 2, (0, 0, 0, 0))
-    square.paste(icon, ((square.width - icon.width) // 2, (square.height - icon.height) // 2))
-    save(square.resize((512, 512), Image.LANCZOS), OUT / "brand" / "app-icon.png")
-    square.resize((64, 64), Image.LANCZOS).save(
-        ROOT / "public" / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48), (64, 64)]
-    )
-    print("wrote public/favicon.ico")
+    # The app icon and favicon are drawn from the KSL pictogram
+    # (resources/js/Components/KsMark.vue), not from this legacy logo sheet.
 
 
 def build_stamp() -> None:

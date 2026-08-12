@@ -55,7 +55,7 @@ class UpdateRestaurantRequest extends FormRequest
             'styles.*' => ['integer', 'exists:kebab_styles,id'],
 
             'opening_hours' => ['array'],
-            "opening_hours.*" => ['array', 'max:3'],
+            'opening_hours.*' => ['array', 'max:3'],
             'opening_hours.*.*.open' => ['required', 'date_format:H:i'],
             'opening_hours.*.*.close' => ['required', 'date_format:H:i'],
         ];

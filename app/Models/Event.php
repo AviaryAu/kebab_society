@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Enums\ImageLicence;
 use Carbon\CarbonImmutable;
 use Database\Factories\EventFactory;
 use Illuminate\Database\Eloquent\Builder;
@@ -41,6 +42,20 @@ class Event extends Model
         'status',
         'meta_title',
         'meta_description',
+        'ingest_source_id',
+        'external_id',
+        'source_url',
+        'source_name',
+        'source_attribution_url',
+        'fingerprint',
+        'last_synced_at',
+        'import_locked',
+        'copy_generated_at',
+        'copy_model',
+        'facts_hash',
+        'image_licence',
+        'image_credit',
+        'image_source_url',
     ];
 
     protected function casts(): array
@@ -51,6 +66,10 @@ class Event extends Model
             'latitude' => 'float',
             'longitude' => 'float',
             'featured' => 'boolean',
+            'import_locked' => 'boolean',
+            'image_licence' => ImageLicence::class,
+            'last_synced_at' => 'immutable_datetime',
+            'copy_generated_at' => 'immutable_datetime',
         ];
     }
 
@@ -68,11 +87,30 @@ class Event extends Model
     }
 
     /**
+     * @return BelongsTo<IngestSource, $this>
+     */
+    public function ingestSource(): BelongsTo
+    {
+        return $this->belongsTo(IngestSource::class, 'ingest_source_id');
+    }
+
+    /**
      * @param  Builder<Event>  $query
      */
     public function scopePublished(Builder $query): void
     {
         $query->where('status', 'published');
+    }
+
+    /**
+     * Rows an importer is allowed to rewrite. An administrator editing an
+     * ingested event sets import_locked, which takes it out of scope for good.
+     *
+     * @param  Builder<Event>  $query
+     */
+    public function scopeSyncable(Builder $query): void
+    {
+        $query->where('import_locked', false);
     }
 
     /**
@@ -101,6 +139,74 @@ class Event extends Model
         $category = collect(config('kslive.categories'))->firstWhere('slug', $this->category_slug);
 
         return Arr::get($category ?? [], 'name', 'Live');
+    }
+
+    public function wasIngested(): bool
+    {
+        return $this->ingest_source_id !== null;
+    }
+
+    /**
+     * The facts the copy is written from.
+     *
+     * The hash below is taken from exactly this array, so the two can never
+     * drift: if a fact changes, the copy is regenerated, and if it does not,
+     * we do not spend a request.
+     *
+     * @return array<string, string>
+     */
+    public function copyFacts(): array
+    {
+        return array_filter([
+            'title' => (string) $this->title,
+            'venue' => (string) $this->venue?->name,
+            'suburb' => (string) $this->suburb,
+            'date' => $this->start_datetime?->format('l j F Y') ?? '',
+            'start_time' => $this->start_datetime?->format('g:i A') ?? '',
+            'end_time' => $this->end_datetime?->format('g:i A') ?? '',
+            'category' => $this->categoryName(),
+            'price' => (string) $this->price,
+        ], static fn (string $value): bool => trim($value) !== '');
+    }
+
+    /**
+     * A digest of the facts the copy is written from. When this is unchanged we
+     * skip regeneration, which is what keeps a six-hourly re-sync from burning
+     * the day's AI request budget rewriting copy nobody asked for.
+     */
+    public function factsHash(): string
+    {
+        $facts = $this->copyFacts();
+        ksort($facts);
+
+        return hash('sha256', json_encode($facts, JSON_THROW_ON_ERROR));
+    }
+
+    public function needsGeneratedCopy(): bool
+    {
+        if (! $this->wasIngested()) {
+            return false;
+        }
+
+        return $this->copy_generated_at === null
+            || $this->facts_hash !== $this->factsHash();
+    }
+
+    /**
+     * Attribution is the consideration we offer for the facts we took, so it
+     * travels with the event rather than being assembled in a template.
+     *
+     * @return array{name: string, url: string}|null
+     */
+    public function attribution(): ?array
+    {
+        $url = $this->source_attribution_url ?: $this->source_url;
+
+        if ($this->source_name === null || $url === null) {
+            return null;
+        }
+
+        return ['name' => $this->source_name, 'url' => $url];
     }
 
     /**
@@ -137,6 +243,8 @@ class Event extends Model
             'date' => $start->format('l j F'),
             'time' => $start->format('g:i A'),
             'end_time' => $end?->format('g:i A'),
+            'image_credit' => $this->image_credit,
+            'attribution' => $this->attribution(),
         ];
     }
 }

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
+use App\Http\Controllers\Admin\EventImportController;
+use App\Http\Controllers\Admin\IngestSourceController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\PageController as AdminPageController;
 use App\Http\Controllers\Admin\RestaurantController as AdminRestaurantController;
@@ -66,6 +68,20 @@ Route::prefix('admin')->name('admin.')->group(function (): void {
         Route::resource('pages', AdminPageController::class)
             ->except(['show'])
             ->parameters(['pages' => 'page']);
+
+        Route::resource('sources', IngestSourceController::class)
+            ->except(['show'])
+            ->parameters(['sources' => 'source']);
+
+        Route::post('sources/{source}/run', [IngestSourceController::class, 'run'])
+            ->name('sources.run');
+
+        Route::get('imports', [EventImportController::class, 'index'])->name('imports.index');
+        Route::post('imports/bulk', [EventImportController::class, 'bulk'])->name('imports.bulk');
+        Route::post('imports/{import}/approve', [EventImportController::class, 'approve'])
+            ->name('imports.approve');
+        Route::post('imports/{import}/reject', [EventImportController::class, 'reject'])
+            ->name('imports.reject');
 
         Route::post('media', [MediaController::class, 'store'])->name('media.store');
 

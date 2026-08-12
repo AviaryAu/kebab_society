@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#171717">
 
+    {{-- The KSL pictogram, reversed out of ink. --}}
     <link rel="icon" href="/images/brand/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/images/brand/app-icon.svg">
+    <link rel="alternate icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+    <link rel="apple-touch-icon" href="/images/brand/app-icon.png">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     {{-- Anton + Oswald draw the logo, Inter runs the interface, Newsreader stands in for Canela. --}}

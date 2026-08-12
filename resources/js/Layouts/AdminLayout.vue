@@ -17,6 +17,8 @@ const NAV = [
     { label: 'Events', href: '/admin/events', match: /^\/admin\/events/ },
     { label: 'Venues', href: '/admin/venues', match: /^\/admin\/venues/ },
     { label: 'Pages', href: '/admin/pages', match: /^\/admin\/pages/ },
+    { label: 'Sources', href: '/admin/sources', match: /^\/admin\/sources/ },
+    { label: 'Imports', href: '/admin/imports', match: /^\/admin\/imports/ },
     { label: 'Register', href: '/admin/restaurants', match: /^\/admin\/(restaurants|photos)/ },
 ];
 
